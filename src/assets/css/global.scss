@@ -1,0 +1,98 @@
+html{
+  font-size:14px;
+  font-family:'Roboto','SCDream';
+  letter-spacing:-0.4px;
+  font-weight:400;
+  color:#494949;
+  word-break: keep-all;
+  // scroll-behavior: smooth;
+}
+html.smooth {
+  scroll-behavior: smooth;
+}
+
+.app{
+  width:100%;
+}
+
+div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li{
+  font-family:'Roboto','SCDream';
+  font-weight:400;
+}
+ul,li{list-style:none;margin:0px;padding:0px;}
+dl,dt,dd{margin:0px;padding:0px;}
+p{margin:0;padding:0}
+
+
+.v-btn{
+letter-spacing:-0px;
+}
+
+.v-dialog{
+box-shadow: 0px 0px 0px rgba(0,0,0,0);
+}
+
+.section-title{
+  h2{
+    font-size:2.6rem;
+    font-weight:300;
+    b{
+      color:#494949;
+      font-weight:500;
+    }
+  }
+  h4{
+    font-size:2.2rem;
+    font-weight:400;
+    b{
+      color:#494949;
+      font-weight:500;
+    }
+  }
+  p{
+    font-size:1.2rem;
+    color:#999;
+    margin-top:20px;
+    line-height:2rem
+  }
+  
+}
+
+.row{padding:0;margin:0;}
+
+
+.member-icon{
+  margin:20px 0;
+  span{
+    height:30px;
+    line-height:32px;
+    padding:0 15px;
+    border-radius:15px;
+    font-size:1rem;
+    background: rgb(255,196,0);
+    background: linear-gradient(249deg, rgba(255,196,0,1) 0%, rgba(255,210,0,1) 100%);
+    display:inline-block;
+    color:#fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    border:1px solid rgba(255,190,0,1)
+  }
+}
+
+@media screen and (max-width:1600px){
+  html{
+    font-size:13.4px;
+  }
+}
+
+@media screen and (max-width:1280px){
+  html{
+    font-size:13px;
+  }
+}
+
+@media screen and (max-width:720px){
+  html{
+    font-size:12px;
+  }
+}
+
