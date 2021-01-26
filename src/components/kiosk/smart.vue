@@ -32,7 +32,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/smart-01.png" />
             </div>
@@ -107,7 +107,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6" >
             <div class="contents-visual">
               <img src="/img/smart-05.png" />
             </div>
@@ -132,7 +132,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/smart-06.png" />
             </div>
@@ -160,7 +160,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/smart-07.png" />
             </div>
@@ -185,7 +185,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/smart-08.png" />
             </div>
@@ -194,7 +194,7 @@
       </div>
     </div>
 
-    <div class="section section-7">
+    <div class="section section-8">
       <div class="inner">
         <v-row justify="space-between">
           <v-col cols="12" md="4">
@@ -211,7 +211,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/smart-09.png" />
             </div>
@@ -330,6 +330,24 @@ export default {};
         line-height:1.7rem;
         color:#888;
       }
+    }
+  }
+
+  .section-4{
+    .row{
+      flex-direction: row-reverse;
+    }
+  }
+
+  .section-6{
+    .row{
+      flex-direction: row-reverse;
+    }
+  }
+
+  .section-8{
+    .row{
+      flex-direction: row-reverse;
     }
   }
 }

@@ -167,7 +167,7 @@
             </div>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" md="7" offset-md="6">
+          <v-col cols="12" md="7">
             <div class="contents-visual">
               <img src="/img/sales-08.png" />
             </div>
@@ -281,6 +281,11 @@ export default {
   .section:nth-child(2n) {
     background: #f8f8f8;
   }
+  .section-2{
+    .row{
+      flex-direction:row-reverse;
+    }
+  }
 
   .section-3 {
 
@@ -322,6 +327,16 @@ export default {
         width: 100%;
         display: block;
       }
+    }
+  }
+  .section-4{
+    .row{
+      flex-direction:row-reverse;
+    }
+  }
+  .section-6{
+    .row{
+      flex-direction:row-reverse;
     }
   }
 }

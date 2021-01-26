@@ -2,9 +2,9 @@
   <div class="kiosk-wrap">
     <div class="subVisual">
       <div class="subTitle">
-        <h4>편리한 매장 스마트한 관리</h4>
-        <span></span>
-        <p>무인세탁매장 키오스크</p>
+        <h4 class="ani">편리한 매장 스마트한 관리</h4>
+        <span class="ani"></span>
+        <p class="ani">무인세탁매장 키오스크</p>
       </div>
       <div class="black"></div>
     </div>
@@ -62,7 +62,7 @@ import Intro from "@/components/kiosk/intro.vue";
 import Smart from "@/components/kiosk/smart.vue";
 import Sales from "@/components/kiosk/sales.vue";
 import Price from "@/components/kiosk/price.vue";
-
+import gsap from 'gsap';
 export default {
   components: {
     Intro,
@@ -106,16 +106,37 @@ export default {
   mounted() {
     window.scrollTo(0, 0);
     window.addEventListener("scroll", this.tabFixed);
+
+    gsap.from('.subVisual .ani' ,{
+      y:100,
+      opacity:0,
+      stagger:{
+        amount:0.2,
+        from:'end'
+      }
+    })
   },
   methods: {
     tabFixed() {
-      window.scrollY >= 450
+      if(window.innerWidth < 960){
+        window.scrollY >= 320
         ? (this.tabSticky = true)
         : (this.tabSticky = false);
+      }else{
+        window.scrollY >= 450
+        ? (this.tabSticky = true)
+        : (this.tabSticky = false);
+      }
     },
     tabMove(i) {
-      this.tabs = i;
-      window.scrollTo(0, 430);
+      if(window.innerWidth < 960){
+        this.tabs = i;
+        window.scrollTo(0, 320);
+      }else{
+        this.tabs = i;
+        window.scrollTo(0, 430);
+      }
+      
     },
   },
 };
@@ -166,7 +187,8 @@ export default {
     z-index: 1;
     left: 0;
     top: 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: #000;
+    opacity: 0.15;
   }
 }
 .mobile-visual {
@@ -232,7 +254,7 @@ export default {
     position: relative;
     display: flex;
     background: #f8f8f8;
-    height: 500px;
+    height: 400px;
     margin: 0 10px;
     border-radius: 15px;
 
@@ -258,7 +280,7 @@ export default {
       flex: 1;
 
       img {
-        height: 350px;
+        height: 250px;
         display: block;
       }
     }
@@ -280,20 +302,16 @@ export default {
         background: #fff;
         z-index: 99;
 
-        .tabActive {
-          background: #eef4f8;
-          border-radius: 10px;
-          padding: 5px 0;
+        .tab {
+          flex:1;
+          text-align: center;
+          margin: 0px;
+          padding:0 10px;
         }
 
-        .tab {
-          flex: 1;
-          flex-grow: 1;
-          text-align: center;
-          margin: 0 15px;
-        }
       }
     }
   }
+  
 }
 </style>

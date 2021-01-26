@@ -4,8 +4,8 @@
     <div class="footer-nav">
       <div class="inner">
       <ul>
-        <li>개인정보 취급방침</li>
-        <li>무인매장 관리시스템</li>
+        <li @click="tremsOpen(true)">개인정보 취급방침</li>
+        <li @click="adminLink">무인매장 관리시스템</li>
       </ul>
       </div>
     </div>
@@ -31,8 +31,27 @@
         </v-row>
       </div>
     </div>
+    <Terms ref="terms"/>
   </div>
 </template>
+
+<script>
+import Terms from '@/components/modal/terms.vue';
+
+export default {
+  components:{
+    Terms,
+  },
+  methods:{
+    tremsOpen(value){
+      this.$refs.terms.open(value);
+    },
+    adminLink(){
+      window.open('http://www.coin-machine.com','_new')
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .footer{
@@ -48,11 +67,16 @@
     align-items: center;;
     height:50px;
     border-bottom:1px solid #e2e2e2;
+    padding:0 15px;
     ul{
       display:flex;
       align-items: center;
       li{
         margin-right:40px;
+      }
+      li:hover{
+        color:#0084DE;
+        cursor: pointer;
       }
     }
   }

@@ -1,8 +1,8 @@
 html{
-  font-size:14px;
-  font-family:'Roboto','SCDream';
-  letter-spacing:-0.4px;
-  font-weight:400;
+  font-size:15px;
+  font-family:'Roboto','NotoSansKR';
+  letter-spacing: -0.7px;
+  font-weight:300;
   color:#494949;
   word-break: keep-all;
   // scroll-behavior: smooth;
@@ -16,13 +16,18 @@ html.smooth {
 }
 
 div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li{
-  font-family:'Roboto','SCDream';
-  font-weight:400;
+  font-family:'Roboto','NotoSansKR';
+  font-weight:300;
+  letter-spacing: -0.7px;
+  color:#494949;
 }
+.v-application ul, .v-application ol{
+  padding:0px;
+}
+
 ul,li{list-style:none;margin:0px;padding:0px;}
 dl,dt,dd{margin:0px;padding:0px;}
 p{margin:0;padding:0}
-
 
 .v-btn{
 letter-spacing:-0px;
@@ -35,10 +40,10 @@ box-shadow: 0px 0px 0px rgba(0,0,0,0);
 .section-title{
   h2{
     font-size:2.6rem;
-    font-weight:300;
+    font-weight:200;
     b{
       color:#494949;
-      font-weight:500;
+      font-weight:400;
     }
   }
   h4{

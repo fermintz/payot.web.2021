@@ -2,7 +2,7 @@
   <div class="kiosk">
     <div class="section-1">
       <div class="inner">
-        <div class="section-title">
+        <div class="section-title main-title">
           <h2>
             간단한 설치, 손쉬운 결제<br />점주와 고객 모두를 만족시킬
             무인결제시스템!
@@ -66,11 +66,20 @@
     <div class="section section-3">
       <div class="inner">
         <div class="section-title">
-          <h4>페이오티 키오스크</h4>
+          <h4>
+            <span>페</span>
+            <span>이</span>
+            <span>오</span>
+            <span>티</span>
+            <span>키</span>
+            <span>오</span>
+            <span>스</span>
+            <span>크</span>
+          </h4>
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section section-4">
       <div class="inner">
         <v-row justify="space-between">
           <v-col cols="12" md="4">
@@ -91,8 +100,8 @@
               </dl>
             </div>
           </v-col>
-          <v-spacer></v-spacer>
-          <v-col cols="12" md="6" offset-md="6">
+          <v-spacer/>
+          <v-col cols="12" md="6">
             <div class="contents-visual">
               <img src="/img/kiosk-img2.png" />
             </div>
@@ -100,7 +109,7 @@
         </v-row>
       </div>
     </div>
-    <div class="section section-4">
+    <div class="section section-5">
       <div class="inner">
         <v-row>
           <v-col cols="12" md="4">
@@ -152,7 +161,7 @@
       </div>
     </div>
 
-    <div class="section section-5">
+    <div class="section section-6">
       <div class="inner">
         <v-row>
           <v-col cols="12" md="4">
@@ -181,7 +190,7 @@
         </v-row>
       </div>
     </div>
-    <div class="section section-6">
+    <div class="section section-7">
       <div class="inner">
         <v-row>
           <v-col cols="12" md="4">
@@ -204,7 +213,7 @@
         </v-row>
       </div>
     </div>
-    <div class="section section-7">
+    <div class="section section-8">
       <div class="inner">
         <v-row>
           <v-col cols="12" md="4">
@@ -231,7 +240,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+
+    }
+  },
+  mounted(){
+
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -355,16 +373,26 @@ export default {};
   .section-3{
     .inner{
       text-align: center;
-
       h4{
         font-size:1.5rem;
-        letter-spacing: 3rem;
-        color:#c3c3c3;
+        font-weight:200;
+        span{
+          display:inline-block;
+          margin:0 20px;
+          color:#a2a2a2;;
+        }
       }
     }
   }
 
-  .section-4 {
+  .section-4{
+    .row{
+      display:flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  .section-5 {
     background:#0075c4 url('/img/kiosk-intro-bg.png') no-repeat 100% center;
 
     .col-12 {
@@ -407,8 +435,11 @@ export default {};
     }
   }
 
-  .section-6{
+  .section-7{
     background:#f8f8f8;
+    .row{
+      flex-direction: row-reverse;
+    }
   }
 }
 </style>

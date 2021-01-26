@@ -4,7 +4,7 @@ import 'hooper/dist/hooper.css';
 import '@/assets/css/global-font.scss';
 import '@/assets/css/global.scss';
 
-Vue.use(Vuetify);
 
+Vue.use(Vuetify);
 
 export default new Vuetify({});

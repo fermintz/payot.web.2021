@@ -6,28 +6,37 @@
     <div class="gnb">
       <ul>
         <li>
-          <a @click="$router.push('About')">페이오티 소개</a>
+          <strong @click="$router.push('About')">페이오티 소개</strong>
           <span></span>
         </li>
         <li>
-          <a @click="kiosk('default')">무인세탁매장 키오스크</a>
+          <strong @click="kiosk('default')">무인세탁매장 키오스크</strong>
           <span></span>
         </li>
         <li class="buy">
-          <a @click="kiosk('buy')">키오스크 구매안내</a>
+          <strong @click="kiosk('buy')">키오스크 구매안내</strong>
           <span></span>
+        </li>
+        <li class="admin">
+          <v-btn text @click="adminLink">
+            <v-icon>mdi-storefront-outline</v-icon>
+            <label>무인매장 관리시스템</label>
+          </v-btn>
         </li>
       </ul>
       <div class="mobile-gnb">
-        <v-btn text icon>
+        <v-btn text icon @click="drawerUpdate(true)">
           <v-icon>mdi-menu</v-icon>
         </v-btn>
       </div>
+     
     </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
   data(){
     return{
@@ -43,6 +52,12 @@ export default {
     },
     kiosk(value){
       this.$router.push({ name: 'Kiosk', query: { tab:value }});
+    },
+    drawerUpdate(value){
+      this.$emit('child', value)
+    },
+    adminLink(){
+      window.open('http://www.coin-machine.com','_new')
     }
   },
 
@@ -97,10 +112,19 @@ export default {
         margin: 0 30px;
         font-size: 1.15rem;
         color: #494949;
-      }
 
-      li.buy{
-        color:#EF1682
+        strong{font-weight:300;}
+
+        .v-btn{
+          min-height:40px;
+          background:#fff;
+          border:2px solid #EF1682;
+          font-weight:300;
+          color:#EF1682;
+          border-radius:20px;
+
+          .v-icon{margin-right:5px;}
+        }
       }
 
       li:hover{
@@ -123,6 +147,7 @@ export default {
       li:last-child{
         margin-right:0px;
       }
+      
     }
 
     .sns{

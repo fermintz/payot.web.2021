@@ -2,9 +2,9 @@
   <div class="about">
     <div class="subVisual">
       <div class="subTitle">
-        <h4>무인매장을 더욱 편리하게</h4>
-        <span></span>
-        <p>페이오티</p>
+        <h4 class="ani">무인매장을 더욱 편리하게</h4>
+        <span class="ani"></span>
+        <p class="ani">페이오티</p>
       </div>
       <div class="black"></div>
     </div>
@@ -174,6 +174,9 @@
 <script>
 import History from '@/components/about/history.vue';
 import Location from '@/components/about/location.vue';
+import gsap from 'gsap';
+
+
 
 export default {
   components:{
@@ -190,6 +193,16 @@ export default {
   mounted() {
     window.scrollTo(0,0)
     window.addEventListener("scroll", this.tabFixed)
+
+    gsap.from('.subVisual .ani' ,{
+      y:100,
+      opacity:0,
+      stagger:{
+        amount:0.2,
+        from:'end'
+      }
+    })
+
   },
   methods: {
     tabFixed() {
@@ -262,7 +275,8 @@ export default {
       z-index: 1;
       left: 0;
       top: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background:#000;
+      opacity: 0.8;
     }
   }
 
@@ -427,6 +441,31 @@ export default {
       .section-title{
         padding:30px;
         background:#fff;
+      }
+    }
+  }
+
+  @media screen and(max-width:960px) {
+    .subVisual {
+      margin:0 10px;
+      height:400px;
+    }
+
+    .tab-wrap {
+      .tabs {
+        .tab {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .company {
+      .section-01 {
+        .row {
+          .col-md-6 {
+            padding: 10px;
+          }
+        }
       }
     }
   }

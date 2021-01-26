@@ -1,13 +1,126 @@
 <template>
   <div class="price">
-    <div class="section-1">
+    <div class="section section-1">
+      <div class="inner">
+        <v-row>
+          <v-col cols="12" md="6">
+            <div class="product">
+              <img src="/img/price01.png" />
+            </div>
+          </v-col>
+          <v-spacer />
+          <v-col cols="12" md="5">
+            <div class="title">
+              <p>프리미엄 무인세탁서비스를 위한 파트너</p>
+              <h4>페이오티 키오스크</h4>
+            </div>
+            <div class="divider first"/>
+            <dl class="kiosk-price">
+              <dt>가격</dt>
+              <dd>
+                4,500,000 원
+              </dd>
+            </dl>
+            <dl class="admin-price">
+              <dt>관리비</dt>
+              <dd>
+                <span>일반 15,000원</span>
+                <span>프리미엄 30,000원</span>
+              </dd>
+            </dl>
+            <dl class="delivery">
+              <dt>배송/설치비</dt>
+              <dd>무료배송/무상설치</dd>
+            </dl>
+            <div class="tip">※부가세는 별도입니다</div>
+            <div class="divider"/>
+            <div class="customer">
+              <div class="button phone" v-ripple>
+                <label><v-icon>mdi-phone</v-icon>전화문의</label>
+                <span>070-7807-6857</span>
+              </div>
+              <div class="button kakao" v-ripple @click="kakaoLink">
+                <label><v-icon>mdi-comment-processing</v-icon>카카오톡 문의</label>
+                <span>
+                  <v-icon>mdi-chevron-right-circle</v-icon>
+                </span>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+    </div>
+
+    <div class="section section-2">
       <div class="inner">
         <div class="section-title">
-          <h2>키오스크 구매안내</h2>
+          <h4>관리비 안내</h4>
+          <p>프리미엄 멤버십에서 더욱 다양한 기능을 만나보세요!</p>
         </div>
-        <div class="spec">
-          <v-row>
-            <v-col cols="12" md="4">
+        <v-row>
+          <v-col cols="12" md="6">
+            <div class="admin-cost standard">
+              <div class="title">
+                <h4>STANDARD</h4>
+                <span>일반 회원</span>
+              </div>
+              <dl class="option">
+                <dt>일반기능</dt>
+                <dd>
+                  <span>키오스크 버젼 4.1.1</span>
+                  <span>매출집계기능</span>
+                  <span>키오스크 현금/카드 매출집계</span>
+                  <span>포인트 지급/차감 기능</span>
+                  <span>멤버십 기능</span>
+                  <span>장비별 매출정보</span>
+                  <span>포인트 지급/차감 카톡 알림 기능</span>
+                  <span>충전/결제 카톡 알림 기능</span>
+                </dd>
+              </dl>
+              <div class="option-price">
+                <strong>￦ 15,000</strong>
+                <span>부가세별도</span>
+              </div>
+            </div>
+          </v-col>
+          <v-col cols="12" md="6">
+            <div class="admin-cost primeum">
+              <div class="title">
+                <h4>PREMIUM</h4>
+                <span>프리미엄 회원</span>
+              </div>
+              
+              <dl class="option">
+                <dt>일반 외<br>추가기능</dt>
+                <dd>
+                  <span>키오스크 버젼 5.0.0</span>
+                  <span>키오스크 메인 대기광고 기능</span>
+                  <span>세탁완료 카톡 알림기능</span>
+                  <span>요일/시간별 적립률 설정기능</span>
+                  <span>키오스크 종합 매출정보</span>
+                  <span>월/일/시간/주간별 매출 통계 및 그래프</span>
+                  <span>타 빨래방 평균 매출 조회 & 수익계산</span>
+                </dd>
+              </dl>
+            
+              <div class="option-price">
+                <strong>￦ 30,000</strong>
+                <span>부가세별도</span>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
+      </div>
+    </div> <!-- section-2 -->
+
+    <div class="section section-3">
+      <div class="inner">
+        <v-row>
+          <v-col cols="12" md="5">
+            <div class="section-title">
+              <h4>제품스펙</h4>
+            </div>
+            <div class="spec">
               <dl>
                 <dt>모니터</dt>
                 <dd>32인치 정전식 터치모니터</dd>
@@ -18,11 +131,11 @@
               </dl>
               <dl>
                 <dt>메인보드</dt>
-                <dd>GIGBYTE</dd>
+                <dd>Gigbyte</dd>
               </dl>
               <dl>
                 <dt>CPU</dt>
-                <dd>인텔/셀러론/브라스웰 J3160(1.6Hz)</dd>
+                <dd>인텔 셀러론 브라스웰 j3160(1.6Hz)</dd>
               </dl>
               <dl>
                 <dt>메모리</dt>
@@ -38,205 +151,59 @@
               </dl>
               <dl>
                 <dt>기타</dt>
-                <dd>Bluetooth</dd>
+                <dd>블루투스 지원</dd>
               </dl>
-            </v-col>
-            <v-spacer />
-            <v-col cols="12" md="6">
-              <div class="image">
-                <img src="/img/size.png" />
-              </div>
-            </v-col>
-          </v-row>
-        </div>
+            </div>
+          </v-col>
+          <v-spacer/>
+          <v-col cols="12" md="4">
+            <div class="size">
+              <img src="/img/size.png">
+            </div>
+          </v-col>
+        </v-row>
       </div>
-    </div>
-
-    <div class="section price-info">
-      <div class="inner">
-        <div class="section-title">
-          <h4>키오스크 가격안내</h4>
-        </div>
-          <v-row>
-            <v-col cols="12" md="4">
-              <dl>
-                <dt>키오스크 가격</dt>
-                <dd>4,500,000 원 <label>(부가세별도)</label></dd>
-              </dl>
-            </v-col>
-            <v-col cols="12" md="4">
-              <dl>
-                <dt>월 관리비</dt>
-                <dd>일반 15,000원 <label>(부가세별도)</label></dd>
-                <dd>프리미엄 33,000원 <label>(부가세별도)</label></dd>
-              </dl>
-            </v-col>
-            <v-col cols="12" md="4">
-              <dl>
-                <dt>설치/배송비</dt>
-                <dd>무료배송·무상설치</dd>
-              </dl>
-            </v-col>
-          </v-row>
-        </div>
-      </div>
-    <div class="section section-2">
-      <div class="inner">
-        <div class="section-title">
-          <h4>관리비안내</h4>
-        </div>
-
-        <table cellspacing="0" cellpadding="0">
-          <tr>
-            <th></th>
-            <th>일반회원</th>
-            <th>프리미엄 회원</th>
-          </tr>
-          <tr class="version">
-            <td>키오스크 버젼</td>
-            <td>4.1.1</td>
-            <td>5.0.0</td>
-          </tr>
-          <tr>
-            <td>500원 동전매출 집계기능</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>키오스크 현금/카드 매출집계</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>포인트 지급/차감 기능</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>회원관리 기능</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-
-          <tr>
-            <td>포인트 지급/차감 카톡 알림</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>충전/결제 카톡 알림</td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>키오스크 대기광고 기능</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>세탁/건조기 종료 카톡 알림</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>장비멸 매출 종합</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>요일/시간별 적립률 이벤트</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>키오스크 종합매출 정보</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>월/일/시간/주간별 매출통계&그래프</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-          <tr>
-            <td>타 빨래방 평균 매출 조회&수익계산</td>
-            <td><v-icon>mdi-close</v-icon></td>
-            <td><v-icon>mdi-circle-outline</v-icon></td>
-          </tr>
-        </table>
-
-        <div class="divider" />
-      </div>
-    </div>
-
-    <div class="section section-3">
-      <div class="inner">
-        <div class="section-title">
-          <h4>제품 설치방법</h4>
-        </div>
-        <div class="install-1">
-          <div class="install-item">
-            <v-row>
-              <v-col cols="12" md="3">
-                <dl>
-                  <dt>벽면 매립 설치</dt>
-                  <dd>
-                    <span>가로 480mm x 세로 1030mm 벽면 목공작업</span>
-                    <span>(앞문, 뒷문 개폐형)</span>
-                  </dd>
-                </dl>
-              </v-col>
-              <v-spacer></v-spacer>
-              <v-col cols="12" md="7">
-                <div class="image">
-                  <img src="/img/install01.png" />
-                </div>
-              </v-col>
-            </v-row>
-          </div>
-          <div class="install-item">
-            <v-row>
-              <v-col cols="12" md="3">
-                <dl>
-                  <dt>스탠드 설치형</dt>
-                  <dd>
-                    <span>스태드 설치 시 받침대 필요</span>
-                    <span>MDF 혹은 목공재질</span>
-                    <span>220V 1개 / LAN케이블 1개 필요</span>
-                  </dd>
-                </dl>
-              </v-col>
-
-              <v-spacer />
-
-              <v-col cols="12" md="3">
-                <div class="image">
-                  <img src="/img/install02.png" />
-                </div>
-              </v-col>
-              <v-spacer />
-              <v-col cols="12" md="3">
-                <div class="item">
-                  <div class="image">
-                    <img src="/img/install04.png" />
-                  </div>
-                  <label>상단 고정설치</label>
-                </div>
-                <div class="item">
-                  <div class="image">
-                    <img src="/img/install03.png" />
-                  </div>
-                  <label>스탠드 사이즈 (별도제작필요)</label>
-                </div>
-              </v-col>
-            </v-row>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    </div> <!-- section-3 -->
     <div class="section section-4">
-      <div class="inner"></div>
+      <div class="inner">
+        <div class="section-title">
+          <h4>키오스크 설치방법 안내</h4>
+        </div>
+        <v-row>
+          <v-col cols="12" md="6">
+            <dl>
+              <dt>벽면 매립식 설치형</dt>
+              <dd>
+                <span>가로 480 x 세로 1030 벽면 목공작업</span>
+                <span>(앞문, 뒷문 개폐형)</span>
+              </dd>
+            </dl>
+          </v-col>
+          <v-col cols="12" md="6">
+            <div class="image image-1">
+              <img src="/img/install01.png">
+            </div>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="6">
+            <dl>
+              <dt>스탠드 설치형</dt>
+              <dd>
+                <span>스태드 설치 시 받침대 필요</span>
+                <span>MDF 혹은 목공재질</span>
+                <span>220V 1개 /  LAN케이블 1개 필요</span>
+                <span>스탠드 제작필요 (W480 x D139 x H850)</span>
+              </dd>
+            </dl>
+          </v-col>
+          <v-col cols="12" md="6">
+            <div class="image image-2">
+              <img src="/img/install02.png">
+            </div>
+          </v-col>
+        </v-row>
+      </div>
     </div>
   </div>
 </template>
@@ -253,216 +220,330 @@ export default {
       ],
     };
   },
+  methods:{
+    kakaoLink(){
+      window.open('http://pf.kakao.com/_uAqmK' , '_new')
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.price {
+.section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
   .inner {
     width: 100%;
-    overflow: hidden;
     max-width: 1280px;
-    padding: 0 10px;
-
-    .divider {
-      height: 1px;
-      background: #e2e2e2;
-      margin: 120px 0;
-    }
   }
+}
 
-  .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.section-1 {
+  padding:100px 0;
 
-  .section-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 120px 0;
-
-    .spec {
-      margin: 50px 0;
-      padding:50px;
-      border-top:1px solid #494949;
-      border-bottom:1px solid #e2e2e2;
-
-      dl {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 20px;
-        font-size: 1.1rem;
-
-        dt {
-          width: 120px;
-          color: #999;
-        }
-        dd {
-          flex: 1;
-          text-align: left;
-        }
-      }
-
-      .image {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-
-        img {
-          max-width: 500px;
-          width: 100%;
-          display: block;
-        }
-      }
-    }
-
-  
-
-    .section-title {
-      text-align: center;
-    }
-
-    .section-visual {
-      overflow: hidden;
-
+  .product{
+    border:1px solid #e2e2e2;
+    overflow:hidden;
       img {
-        width: 100%;
-        display: block;
-      }
-    }
-  }
-
-  .price-info {
-    background:#F5EBF0;
-    padding:60px 0;
-    margin-bottom:90px;
-
-      dl {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px;
-        min-height: 150px;
-        border: 1px solid #e2e2e2;
-        background:#fff;
-
-        dt {
-          color: #292929;
-          font-size: 1.2rem;
-        }
-        dd {
-          font-size: 1.5rem;
-          color: #ef1682;
-          text-align: right;
-          span {
-            color: #292929;
-          }
-          label {
-            color: #888;
-            font-size: 1rem;
-          }
-        }
-      }
-      .col-12:first-child {
-        dl {
-          border-color: #ef1682;
-        }
-      }
-    }
-
-  .section-2 {
-    table {
       width: 100%;
+      display:block;
+    }
+  }
 
-      .version {
-        background: #eef2f5;
-      }
+  .title {
+    margin-top:20px;
+    p {
+      margin-bottom:5px;
+      color: #888;
+    }
+    h4 {
+      font-size: 2.5rem;
+    }
+  }
 
-      th {
-        height: 60px;
-        font-size: 1.2rem;
-        font-weight: 500;
-      }
-      th:last-child {
-        color: #0084de;
-      }
+  .divider{
+    height:1px;
+    background:#e2e2e2;
+    margin:30px 0;
+  }
 
-      td {
-        text-align: center;
-        padding: 10px;
-        font-size: 1.1rem;
-        .v-icon {
-          font-size: 20px;
-        }
-      }
-      td:first-child {
-        text-align: left;
-      }
-      td:last-child {
-        color: #0084de;
-        .v-icon {
-          color: #0084de;
-        }
-      }
-      td:nth-child(2) {
-        width: 100px;
+  .divider.first{
+    background:#0588E1
+  }
+
+  dl{
+    display:flex;
+    justify-content: space-between;
+    text-align:right;
+    margin-bottom:30px;
+
+    dd{
+      font-size:1.3rem;
+    }
+  }
+  dl.kiosk-price{
+    dd{
+      font-weight:500;
+      font-size:2rem;
+      color:#EF1682;
+    }
+  }
+
+  dl.admin-price{
+    dd{
+      span{
+        display:block;
+        margin-bottom:5px;
       }
     }
   }
 
-  .section-3 {
-    .section-title {
-      margin-bottom: 30px;
+  .tip{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    background:#f2f2f2;
+    height:30px;
+    border-radius:15px;
+    margin-top:10px;
+  }
+  .customer{
+    display:flex;
+    
+    .button{
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height:100%;
+      padding:15px;
+      height:100px;
+      flex:1;
+      border:1px solid #e2e2e2;
+      border-radius:10px;
+
+      label{
+        .v-icon{margin-right:10px;}
+      }
+      span{
+        text-align:right;
+        font-size:1.5rem;
+        margin-top:15px;
+
+        .v-icon{
+          font-size:30px;
+        }
+      }
     }
-    .install-item {
-      border: 1px solid #e2e2e2;
-      background: #f8f8f8;
-      padding: 30px;
-      margin-bottom: 30px;
 
-      .item {
-        margin-bottom: 40px;
-        text-align: center;
-        label {
-          margin-top: 15px;
-          display: block;
+    .kakao{
+      margin-left:10px;
+      background:#FFCC00;
+      border:0px;
+    }
+
+  }
+}
+
+.section-2{
+  background: #f8f8f8;
+  padding:70px 0;
+
+  .section-title{
+    text-align:center;  
+    margin-bottom:40px;
+  }
+  .row{
+    overflow:hidden;
+  }
+
+  .col-12{
+    padding:0px;
+  }
+
+  .title{
+    margin-bottom:30px;
+    h4{
+      font-size:3rem;
+      font-weight:500;
+    }
+    span{color:#888;}
+  }
+
+  .admin-cost{
+    display:flex;
+    flex-direction: column;
+    text-align:center;
+    padding:50px;
+    height:100%;
+
+      .option{
+      padding:30px;
+      background:#fff;
+      text-align:left;
+      display:flex;
+      border-radius:15px;
+      height:100%;
+      min-height:300px;
+
+      dt{
+        font-size: 1.2rem;
+        margin-right:30px;
+      }
+      dd{
+        border-left:1px solid #e2e2e2;
+        padding-left:30px;
+        span{
+          display:block;
+          margin-bottom:10px;
+        }
+        span:before{
+          content:'';
+          width:4px;
+          height:4px;
+          display:inline-block;
+          margin-right:15px;
+          background:#c2c2c2;
         }
       }
-      .item:last-child {
-        margin-bottom: 0px;
-      }
+    }
 
-      dl {
-        dt {
-          font-size: 1.6rem;
-        }
-        dd {
-          font-size: 1.1rem;
-          margin-top: 20px;
-          span {
-            display: block;
-            margin-bottom: 10px;
-            color: #888;
-          }
-        }
+    .option-price{
+      margin-top:30px;
+      strong{
+        font-weight:500;
+        font-size:2.4rem;
+        font-family:'Roboto';
+        display:block;
       }
-      .image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 100%;
+      span{
+        margin-top:5px;
+        color:#888;
+        display:block;
+      }
+    }
+   
+  }
 
-        img {
-          width: 100%;
-        }
+  .standard{
+    background:#fff;
+    .option{
+      background:#f2f2f2;
+    }
+  }
+
+  .primeum{
+    background:#0588E1;
+    .title{
+      h4{color:#fff}
+      span{color:#fff}
+    }
+
+    .option-price{
+      strong{color:#fff;}
+      span{color:#fff;}
+    }
+  }
+}
+
+.section-3{
+  padding-top:100px;
+
+  .size{
+    img{width:100%;}
+  }
+
+  h4{
+    font-size:2rem;
+    margin-bottom:20px;
+  }
+
+
+  .spec{
+    dl{
+      border:1px solid #e2e2e2;
+      background:#fff;
+      margin-bottom:10px;
+      padding:0 15px;
+      height:40px;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+
+      dt{
+        color:#888;
       }
     }
   }
 }
+
+
+.section-4{
+  padding:100px 0;
+
+  .section-title{
+    margin-bottom:40px;
+  }
+  .image{
+    img{
+      width:100%;
+      display:block;
+    }
+  }
+
+  .row{
+    align-items: center;
+    border:1px solid #e2e2e2;
+    padding:30px;
+    margin-bottom:20px;
+    background:#fff;
+  }
+
+  dl{
+    dt{
+      font-size:1.5rem;
+      font-weight:500;
+    }
+
+    dd{
+      margin-top:30px;
+      span{
+        display:block;
+        margin-bottom:10px;
+      }
+      span:before{
+        content:'';
+        display:inline-block;
+        width:4px;
+        height:4px;
+        margin-right:15px;
+        background:#e2e2e2;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:1280px) {
+  .section{
+    .inner{
+      padding:0 15px;
+    }
+  }
+
+  .section-2{
+    .admin-cost{
+      padding:20px;
+
+      .option{
+        flex-direction: column;
+        dt{margin-bottom:20px;}
+        dd{border-left:0px;padding:0px;}
+      }
+    }
+    
+  }
+}
+
 </style>

@@ -4,16 +4,16 @@
       <div class="wave wave1"></div>
       <div class="wave wave2"></div>
     </div>
-    <div class="section-01 fill-height">
+    <div class="section-01">
       <div class="inner">
         <div class="main-visual">
           <v-row>
             <v-col cols="12" md="6" sm="12">
               <div class="visual-title">
                 <div class="text">
-                  <span>PAYOT SMART SYSTEM</span>
-                  <h2>일반 무인세탁매장을<br /><b>스마트 무인매장으로</b></h2>
-                  <p>
+                  <span class="slideUp">PAYOT SMART SYSTEM</span>
+                  <h2 class="slideUp">일반 무인세탁매장을<br /><b>스마트 무인매장으로</b></h2>
+                  <p class="slideUp">
                     PC/모바일로 쉽고 간편하게 매장을 관리하는 <br />무인세탁매장
                     전용 키오스크<br />
                   </p>
@@ -98,7 +98,7 @@
         </div>
 
         <div class="more">
-          <v-btn text>
+          <v-btn text @click="kiosk('buy')">
             <label>키오스크 가격안내 바로가기</label>
             <v-icon>mdi-arrow-right</v-icon>
           </v-btn>
@@ -110,9 +110,9 @@
       <div class="inner">
         <v-row>
           <v-col cols="12" md="6" sm="6" lg="3">
-            <div class="section-title">
-              <h2>부담은 줄이고<br><b>혜택은 늘리고</b></h2>
-              <p>
+            <div class="section-title" >
+              <h2 class="slideUp">부담은 줄이고<br><b>혜택은 늘리고</b></h2>
+              <p class="slideUp">
                 페이오티는 현장에서 점주님과 소통을 통해 문제점을 개선하고
                 사용편의성을 높이는 업데이트를 무상으로 제공하고 있으며, 더욱
                 효율적이고 편리한 시스템을 만들기 위해 항상 노력하고 있습니다
@@ -190,8 +190,8 @@
           <v-spacer/>
           <v-col cols="12" md="4">
             <div class="section-title">
-              <h2>무인세탁매장만을 연구해온<br><b>전문가들과 함께하세요!</b></h2>
-              <p>페이오티는 무인세탁매장의 완전 무인화를 위한 연구를 계속해오고 있습니다.
+              <h2 class="slideUp">무인세탁매장만을 연구해온<br><b>전문가들과 함께하세요!</b></h2>
+              <p class="slideUp">페이오티는 무인세탁매장의 완전 무인화를 위한 연구를 계속해오고 있습니다.
                 어떻게 하면 고객들이 더욱 편리하게 매장을 이용할 수 있을지, 점주님이 
                 신경쓰지 않고 무인매장을 운영할 수 있을지 늘 고민하고 연구하고 있습니다
               </p>
@@ -219,7 +219,7 @@
         </div>
         <div class="partner-logo">
           <v-row>
-            <v-col cols="4" md="2" v-for="item in 18" :key="item">
+            <v-col cols="4" md="2" v-for="item in 18" :key="item" class="logoUp">
               <span >
                 <img :src="`/img/partner${item}.png`">
               </span>
@@ -245,7 +245,7 @@
               </div>
               <ul>
                 <li>
-                  <a href="#">
+                  <a href="http://www.nbntv.co.kr/news/articleView.html?idxno=901512" target="_new">
                     <div class="image">
                       <img src="/img/news01.jpg">
                     </div>
@@ -261,7 +261,7 @@
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a href="http://www.e2news.com/news/articleView.html?idxno=224453" target="_new">
                     <div class="image">
                       <img src="/img/news02.jpg">
                     </div>
@@ -276,7 +276,7 @@
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a href="https://www.yna.co.kr/view/AKR20190706033000051?input=1179m" target="_new">
                     <div class="image">
                       <img src="/img/news03.jpg">
                     </div>
@@ -334,7 +334,7 @@
                 <dt>제품 문의하기</dt>
                 <dd>070-7807-6857</dd>
               </dl>
-              <v-btn text>
+              <v-btn text @click="kakaoLink">
                 <v-icon>mdi-message</v-icon>
                 <label>카카오톡으로 문의하기</label>
               </v-btn>
@@ -373,6 +373,8 @@
 <script>
 import { Hooper, Slide } from "hooper";
 import { daumSearch } from "@/utils/KakaoSearch";
+import gsap from 'gsap';
+import scrollTrigger from 'gsap/ScrollTrigger'
 
 export default {
   components: {
@@ -392,6 +394,8 @@ export default {
       middleVisualData:[
         {url:'/img/middle-01.jpg'},
         {url:'/img/middle-02.jpg'},
+        {url:'/img/middle-03.jpg'},
+        {url:'/img/middle-04.jpg'},
       ],
 
       blogPosts: [],
@@ -471,6 +475,52 @@ export default {
       this.blogPosts = data.documents;
     });
 
+    gsap.registerPlugin(scrollTrigger)
+
+    gsap.from('.section-01 .slideUp',{
+      y:-100,
+      opacity:0,
+      stagger:{
+        amount:0.6,
+      }
+    })
+
+    gsap.from('.section-03 .slideUp',{
+      scrollTrigger:{
+        trigger:'.section-03',
+        start:'top 70%',
+      },
+      y:200,
+      opacity:0,
+      stagger:{
+        amount:0.3,
+      }
+    })
+
+    gsap.from('.middle-visual .slideUp',{
+      scrollTrigger:{
+        trigger:'.middle-visual',
+        start:'top 60%',
+      },
+      y:200,
+      opacity:0,
+      stagger:{
+        amount:0.3,
+      }
+    })
+
+    gsap.from('.section-04 .logoUp',{
+      scrollTrigger:{
+        trigger:'.section-04',
+        start:'top center',
+      },
+      y:200,
+      opacity:0,
+      stagger:{
+        amount:1,
+      }
+    })
+  
   },
   methods: {
     onScreenSizeChange() {
@@ -482,7 +532,16 @@ export default {
      downloadFile(fileName) {
       const filePath = `http://www.payot-inc.com/pdf/${fileName}.pdf`;
       window.open(filePath, '_blank');
-    }
+    },
+
+    kakaoLink(){
+      window.open('http://pf.kakao.com/_uAqmK' , '_new')
+    },
+
+    kiosk(value){
+      this.$router.push({ name: 'Kiosk', query: { tab:value }});
+    },
+
   },
 };
 </script>
@@ -495,7 +554,7 @@ export default {
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 200%;
+    height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
@@ -812,19 +871,19 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
     position: relative;
 
     .hooperBtn {
-      width: 100%;
+      width: 90%;
       display: flex;
       justify-content: space-between;
       top: 50%;
-      left: 0px;
+      left: 5%;
       position: absolute;
       transform: translateY(-50%);
       padding: 0;
 
       .v-btn {
-        width: 60px;
-        min-width: 60px;
-        min-height: 60px;
+        width: 50px;
+        min-width: 50px;
+        min-height: 50px;
         border-radius: 50%;
         background: #0286cb;
 
@@ -985,16 +1044,16 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
         .image{
           display:Flex;
           justify-content: center;
-          align-items: center;;
-          width:120px;
-          height:120px;
+          align-items: center;
+          width:110px;
+          height:110px;
           border:1px solid #e2e2e2;
           margin-right:30px;
           border-radius:5px;
           overflow:hidden;
 
           img{
-            height:100%;
+            height:120%;
             display:block;
           }
         }
@@ -1194,14 +1253,14 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
 
         .text {
           span {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
           }
           h2 {
-            font-size: 3.4rem;
-            line-height: 4.4rem;
+            font-size: 3rem;
+            line-height: 4rem;
           }
           p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             line-height:2.2rem;
           }
         }
@@ -1254,22 +1313,58 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
 @media screen and (max-width:480px){
   .section-01{
     .main-visual{
-      .visual-title{
-        .text{
-          span{
-            font-size:1.4rem;
-            letter-spacing: 1px;
+      min-height:auto;
+      .visual-title {
+        padding:40px 20px;
+        .text {
+          span {
+            font-size: 1.2rem;
           }
-          h2{
-            font-size:4rem;
-            line-height:5rem
+          h2 {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            margin-bottom:20px;
+          }
+          p {
+            font-size: 1.2rem;
+            line-height:2rem;
+          }
+        }
+      }
+
+      .carousel{
+          .carousel-item{
+          img{
+            max-height:300px;
           }
         }
       }
     }
   }
-  
-  
+
+  .hooperWrap{
+    .hooper{
+      max-height:500px;
+    }
+  }
+
+  .section-05{
+    .list{
+      padding:30px 0px;
+      ul{
+        li{
+          margin-bottom:20px;
+          padding-bottom:20px;
+          .image{
+            width:80px;
+            height:80px;
+            margin-right:20px;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 </style>

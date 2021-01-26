@@ -1,8 +1,5 @@
 <template>
   <div class="side-btns">
-    <div class="btn admin-btn" v-ripple>
-      <label>무인매장<br>관리시스템</label>
-    </div>
     <div class="btn top" v-ripple @click="scrollUp">
       <v-icon>mdi-arrow-up</v-icon>
       <label>Top</label>
@@ -67,6 +64,10 @@ export default {
     }
     color:#0084DE
   }
+}
+
+@media screen and (max-width:1280px) {
+  .side-btns{display:none;}
 }
 
 </style>
