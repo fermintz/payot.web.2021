@@ -33,7 +33,11 @@
       </div>
       
       <p>스마트페이는 QR코드를 활용한 세탁장비 결제시스템입니다.<br>전용 앱 설치없이 기본카메라로 QR코드를 스캔하여 장비를 결제할 수 있습니다</p>
-      <div class="bg"></div>
+      <div class="bg">
+        <video autoplay loop id="video-bg" muted>
+          <source src="/video/smartpay.mp4" type="video/mp4" poster="/img/smartpay/smart03.jpg">
+        </video>
+      </div>
       <div class="scrolldown" @click="scrollMoveEvent">
         <v-icon>mdi-mouse-move-down</v-icon>
         <label>scroll down</label>
@@ -419,8 +423,10 @@ export default {
   },
   mounted() {
     this.scrollDownEvent()
+
   },
   methods: {
+  
     scrollDownEvent(){
       const ht = window.innerHeight;
   

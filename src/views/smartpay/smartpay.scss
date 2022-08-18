@@ -23,6 +23,9 @@
   }
 
   .bg{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     z-index:1;
     background:url('/img/smartpay/smart03.jpg') no-repeat center / cover;
@@ -31,6 +34,10 @@
     width:100%;
     height:100%;
     transform: scale(1.2);
+
+    video{
+      height:100%;
+    }
   }
 
   .scrolldown{
