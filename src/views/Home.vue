@@ -7,53 +7,58 @@
     <div class="section-01">
       <div class="inner">
         <div class="main-visual">
-          <v-row>
-            <v-col cols="12" md="6" sm="12">
-              <div class="visual-title">
-                <div class="text">
-                  <span class="slideUp">PAYOT SMART SYSTEM</span>
-                  <h2 class="slideUp">일반 무인세탁매장을<br /><b>스마트 무인매장으로</b></h2>
-                  <p class="slideUp">
-                    PC/모바일로 쉽고 간편하게 매장을 관리하는 <br />무인세탁매장
-                    전용 키오스크<br />
-                  </p>
+          <v-carousel 
+            v-model="carousel"
+            hide-delimiters
+            interval="5000"
+            :show-arrows="false"
+            height="unset"
+            width="100%"
+            cycle
+          >
+            <v-carousel-item>
+              <div class="carousel-item">
+                <div class="visual-title">
+                  <div class="text">
+                    <span class="slideUp">PAYOT SMART SYSTEM</span>
+                    <h2 class="slideUp"><strong>업계 유일 동전매출 집계</strong> 빨래방 간편하게 관리하세요!</h2>
+                    <p class="slideUp">
+                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b><b>페이오티 무인세탁매장 관리시스템</b>
+                    </p>
+                  </div>
+                </div>
+                <div class="image_box">
+                  <img src="/img/main-visual03.png">
                 </div>
               </div>
-            </v-col>
-            <v-col cols="12" md="6" sm="12">
-              <div class="carousel">
-                <v-carousel 
-                  v-model="carousel"
-                  hide-delimiters
-                  interval="4000"
-                  :show-arrows="false"
-                  height="unset"
-                  cycle
-                >
-                  <v-carousel-item
-                    
-                    v-for="item in carouselData" :key="item"
-                  >
-                    <div class="carousel-item">
-                      <img :src="item.url"/>
-                    </div>
-                  </v-carousel-item>
-                </v-carousel>
+            </v-carousel-item>
+            <v-carousel-item>
+              <div class="carousel-item">
+                 <div class="visual-title">
+                  <div class="text">
+                    <span class="slideUp">PAYOT SMART SYSTEM</span>
+                    <h2 class="slideUp">일반 무인세탁매장을 <strong>스마트 무인매장으로</strong></h2>
+                    <p class="slideUp">
+                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b><b>페이오티 무인세탁매장 관리시스템</b>
+                    </p>
+                  </div>
+                </div>
+                <div class="image_box">
+                  <img src="/img/main-visual02.png">
+                </div>
               </div>
-            </v-col>
-          </v-row>
+            </v-carousel-item>
+          </v-carousel>
         </div>
-        <v-btn text class="bottom-arrow" @click="bottomScroll">
-          <v-icon>mdi-chevron-down</v-icon>
-        </v-btn>
       </div>
     </div>
-
+    <div class="spacer">
+      <div class="v-divider" />
+    </div>
 
     <div class="section-02 section">
       <div class="inner">
         <div class="section-title">
-          <div class="v-divider" />
           <h2>페이오티 키오스크의 <b>특별한 기능</b></h2>
           <p>
             무인세탁매장을 위한 페이오티 키오스크는<br />점주님의 편의성과
@@ -105,6 +110,8 @@
         </div>
       </div>
     </div>
+
+    <PayotForte />
 
     <div class="section-03 section">
       <div class="inner">
@@ -367,6 +374,7 @@
         </v-row>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -375,19 +383,22 @@ import { Hooper, Slide } from "hooper";
 import { daumSearch } from "@/utils/KakaoSearch";
 import gsap from 'gsap';
 import scrollTrigger from 'gsap/ScrollTrigger'
+import PayotForte from '@/components/home/forte';
+
 
 export default {
   components: {
     Hooper,
     Slide,
+    PayotForte,
+
   },
   data() {
     return {
-
       carousel:0,
       carouselData:[
         {url:'/img/main-visual01.png'},
-        {url:'/img/main-visual02.png'},
+        {url:'/img/main-visual03.png'},
       ],
 
       middleVisual:0,
@@ -399,7 +410,6 @@ export default {
       ],
 
       blogPosts: [],
-
       setting: {
         wheelControl: false,
         autoPlay: true,
@@ -432,7 +442,13 @@ export default {
           title: "매출관리/매출통계",
           subText: "500원짜리 동전까지 작은 매출도 정확하게 기록",
           img: "/img/hooper-01.png",
-          background: "#f5f6f7",
+          background: "#fff",
+        },
+        {
+          title: "헛걸음 방지시스템",
+          subText: "동작중인 장비 미리 확인하고 매장을 방문",
+          img: "/img/kiosk-img9.png",
+          background: "#FBF7F4",
         },
         {
           title: "원격 동전 투입",
@@ -529,6 +545,7 @@ export default {
     bottomScroll(){
       window.scrollTo({top:window.innerHeight, behavior:'smooth'})
     },
+    
      downloadFile(fileName) {
       const filePath = `http://www.payot-inc.com/pdf/${fileName}.pdf`;
       window.open(filePath, '_blank');
@@ -541,7 +558,6 @@ export default {
     kiosk(value){
       this.$router.push({ name: 'Kiosk', query: { tab:value }});
     },
-
   },
 };
 </script>
@@ -549,178 +565,122 @@ export default {
 <style lang="scss" scoped>
 .home {
   height: 100%;
+ 
 
+  .spacer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:100px;
+
+    .v-divider{
+      display:inline-block;
+      height:150px;
+      width:1px;
+      background: #e2e2e2;
+    }
+  }
+  
   .top-bg {
     position: absolute;
-    overflow: hidden;
+    overflow:hidden;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 1;
-
-    .wave1 {
-      position: absolute;
-      top: -700px;
-      left: -700px;
-      width: 1600px;
-      height: 1600px;
-      border-radius: 720px;
-      background: rgb(0,179,226);
-background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%);
-      z-index: 3;
-      animation: waves 20s infinite linear;
-      opacity: 1;
-    }
-
-    .wave2 {
-      position: absolute;
-      top:500px;
-      right: -350px;
-      width: 600px;
-      height: 600px;
-      border-radius: 270px;
-      background: rgb(239,22,130);
-      background: linear-gradient(90deg, rgba(239,22,130,1) 0%, rgba(255,171,0,1) 100%);
-      z-index: 4;
-      opacity: 1;
-      animation: waves 15s infinite linear;
-    }
-
-
-    @keyframes waves {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+    z-index: 2;
   }
 }
 
 .section {
   position: relative;
-  padding: 120px 0;
+  padding: 100px 0;
   z-index: 10;
 
   .inner {
     margin:0 150px;
   }
 }
-  
 
 .section-01 {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding:0 30px;
+  padding:0 50px;
 
   .inner {
     position: relative;
+    width:100%;
     max-width: 100%;
-
-    .bottom-arrow {
-      position: absolute;
-      z-index:3;
-      left: 50%;
-      bottom:-35px;
-      margin-left:-35px;
-      width: 70px;
-      height: 70px;
-      border-radius: 40px;
-      background: #e2e2e2;
-      border:8px solid rgba(255, 255, 255,0.3);
-      animation: tingle 1s infinite linear;
-
-      .v-icon {
-        color: #fff;
-        font-size: 36px;
-      }
-    }
-
-    .row {
-      padding: 0;
-      margin: 0;
-    }
-
-    .col-md-6 {
-      padding: 0;
-      margin: 0;
-    }
-
-    @keyframes tingle {
-      0% {
-        background: #0286cb;
-      }
-      50% {
-        background: #0056a2;
-      }
-      100% {
-        background: #0286cb;
-      }
-    }
   }
 
-  .main-visual {
-    position: relative;
-    border-radius:30px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
-    overflow:hidden;
-    background:rgba(255,255,255,0.98);
-    min-height:720px;
 
-    .visual-title {
-      height: 100%;
-      display: flex;
-      justify-content: center;
+
+    .main-visual{
+      display:Flex;
       align-items: center;
-      padding:60px;
+      width:100%;
+      overflow:hidden;
+      border-radius:30px;
+      background:#f2f2f2;
 
-      .text {
-        width: auto;
+      min-height:680px;
 
-        span {
-          font-size: 1.5rem;
-          letter-spacing: 10px;
-          color: #888;
-          margin-left: 10px;
-        }
-        h2 {
-          font-size: 4.8rem;
-          line-height: 5.8rem;
-          font-weight: 200;
-          margin-top: 25px;
-          margin-bottom: 30px;
-          b {
-            font-weight: 200;
-            color: #0286cb;
+      .carousel-item{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height:100%;
+        
+        .visual-title {
+          padding:80px 150px;
+
+          .text {
+            width: auto;
+
+            span {
+              font-size: 1.5rem;
+              letter-spacing: 10px;
+              color: #888;
+              margin-left: 10px;
+            }
+            h2 {
+              font-size: 4rem;
+              line-height: 4.8rem;
+              font-weight: 200;
+              margin-top: 25px;
+              margin-bottom: 30px;
+              strong {
+                display:block;
+                font-weight: 200;
+                color: #EF1682;
+              }
+            }
+            p {
+              font-size: 1.4rem;
+              line-height: 2.4rem;
+
+              b{
+                display:block;
+                font-weight:300;
+              }
+            }
+          }
+        } 
+
+        .image_box{
+          align-self: flex-end;
+          img{
+            display:block;
+            max-width:680px;
           }
         }
-        p {
-          font-size: 1.4rem;
-          line-height: 2.4rem;
-          font-weight: 300;
-        }
-      }
-    }
-    
-    .carousel{
-      .carousel-item{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
 
-        img{
-          display:block;
-          max-height:720px;
-        }
+        
       }
     }
   }
-}
+
 
 .middle-visual.section{
   padding:0px;
@@ -764,19 +724,9 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
 }
 
 .section-02 {
-  margin-top:50px;
-
   .section-title {
     margin-bottom: 80px;
     text-align: center;
-
-    .v-divider{
-      display:inline-block;
-      margin-bottom:70px;
-      height:100px;
-      width:1px;
-      background: #e2e2e2;
-    }
   }
 
   .more{
@@ -861,6 +811,7 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
         justify-content: center;
         img {
           width: 100%;
+          height:100%;
           display: block;
         }
       }
@@ -970,6 +921,7 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
   display:flex;
   justify-content: center;
   background:#f8f8f8;
+  
   .inner{
     max-width:1280px;
   }
@@ -1197,42 +1149,63 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
     
     .inner{
       margin:0 20px;
-    }
+    }    
   }
 
   .section-01{
     .main-visual{
-      .visual-title{
-        .text{
-          span{
-            font-size:1.4rem;
-            letter-spacing: 1px;
-          }
-          h2{
-            font-size:4rem;
-            line-height:5rem
+
+      .carousel-item{
+        flex-direction:column;
+        align-items: unset;
+        justify-content: unset;
+
+        .image_box{
+          img{
+            max-width:100%;
           }
         }
       }
     }
   }
 }
-@media screen and(max-width:1280px){
-  
-} 
-@media screen and(max-width:960px){
+
+@media screen and (max-width:960px){
+.home{
   .section-01{
-    .main-visual{
-      .visual-title {
-        height: 100%;
-        display: block;
-        text-align:center;
-        padding:50px;
-      }
-      .carousel{
+      .main-visual{
         .carousel-item{
-          img{
-            max-height:460px;
+          flex-direction:column;
+
+          .visual-title {
+            padding:60px 30px;
+            .text {
+              width: auto;
+              span {
+                font-size:14px;
+                letter-spacing:5px;
+                font-weight:400;
+                margin-left: 0px;
+              }
+              p {
+                font-size: 18px;
+                line-height: 26px;
+                font-weight:normal;
+
+                b{
+                  display:inline;
+                  font-weight:normal;
+                }
+              }
+            }
+          } 
+
+          .image_box{
+            align-self: flex-end;
+            img{
+              display:block;
+              max-width:100%;
+            }
           }
         }
       }
@@ -1240,37 +1213,10 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
   }
 }
 @media screen and (max-width:720px){
-  .section-01{
-    padding:0 10px;
-
-    .bottom-arrow{
-      display:none;
-    }
-
-    .main-visual{
-      .visual-title {
-        height:100%;
-
-        .text {
-          span {
-            font-size: 1.2rem;
-          }
-          h2 {
-            font-size: 3rem;
-            line-height: 4rem;
-          }
-          p {
-            font-size: 1.2rem;
-            line-height:2.2rem;
-          }
-        }
-      }
-      .carousel{
-          .carousel-item{
-          img{
-            max-height:400px;
-          }
-        }
+  .home{
+    .top-bg {
+      .wave2 {
+        top:300px;
       }
     }
   }
@@ -1311,37 +1257,6 @@ background: linear-gradient(90deg, rgba(0,179,226,1) 0%, rgba(0,131,255,1) 100%)
 }
 
 @media screen and (max-width:480px){
-  .section-01{
-    .main-visual{
-      min-height:auto;
-      .visual-title {
-        padding:40px 20px;
-        .text {
-          span {
-            font-size: 1.2rem;
-          }
-          h2 {
-            font-size: 2.5rem;
-            line-height: 3rem;
-            margin-bottom:20px;
-          }
-          p {
-            font-size: 1.2rem;
-            line-height:2rem;
-          }
-        }
-      }
-
-      .carousel{
-          .carousel-item{
-          img{
-            max-height:300px;
-          }
-        }
-      }
-    }
-  }
-
   .hooperWrap{
     .hooper{
       max-height:500px;

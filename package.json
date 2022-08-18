@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepublish": "vue-cli-service build",
+    "publish": "scp -r .\\dist\\* root@dailywash.co.kr:/web/www.payot-inc.com"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -13,9 +15,11 @@
     "gsap": "^3.6.0",
     "hooper": "^0.3.4",
     "vue": "^2.6.11",
+    "vue-cookies": "^1.7.4",
     "vue-router": "^3.2.0",
     "vuetify": "^2.2.11",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

@@ -1,11 +1,12 @@
 html{
-  font-size:15px;
-  font-family:'Roboto','NotoSansKR';
-  letter-spacing: -0.7px;
-  font-weight:300;
-  color:#494949;
+  font-size:16px;
+  font-family:'Pretendard';
   word-break: keep-all;
-  // scroll-behavior: smooth;
+  overflow-x:hidden; 
+  font-weight:500;
+  letter-spacing: -0.2px;
+  line-height:1.4;
+  color:#393939;
 }
 html.smooth {
   scroll-behavior: smooth;
@@ -14,13 +15,19 @@ html.smooth {
 .app{
   width:100%;
 }
-
-div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li{
-  font-family:'Roboto','NotoSansKR';
-  font-weight:300;
-  letter-spacing: -0.7px;
-  color:#494949;
+.v-application{
+  
+  strong{
+    font-weight:normal;
+  }
 }
+
+.inner{
+  width:100%;
+  max-width:1200px;
+  margin:0px auto;
+}
+
 .v-application ul, .v-application ol{
   padding:0px;
 }
@@ -28,6 +35,7 @@ div,dl,dt,dd,h1,h2,h3,h4,h5,h6,ul,li{
 ul,li{list-style:none;margin:0px;padding:0px;}
 dl,dt,dd{margin:0px;padding:0px;}
 p{margin:0;padding:0}
+img{display:block;}
 
 .v-btn{
 letter-spacing:-0px;
@@ -60,11 +68,9 @@ box-shadow: 0px 0px 0px rgba(0,0,0,0);
     margin-top:20px;
     line-height:2rem
   }
-  
 }
 
 .row{padding:0;margin:0;}
-
 
 .member-icon{
   margin:20px 0;
@@ -83,21 +89,38 @@ box-shadow: 0px 0px 0px rgba(0,0,0,0);
   }
 }
 
-@media screen and (max-width:1600px){
-  html{
-    font-size:13.4px;
-  }
+
+//SA 애니메이션
+
+.sa{
+  display:none;
+  opacity:0;
+  transition: all .6s ease;
 }
+
+.sa-up{
+  transform:translate(0, 100px);
+}
+
+.sa-left{
+  transform: translateX(100px);
+}
+
+.sa-scail{
+  transform:scale(1.5);
+}
+
+.sa.show{
+  display:block;
+  opacity: 1;
+  transform: none;
+}
+
 
 @media screen and (max-width:1280px){
   html{
-    font-size:13px;
+    font-size:14px;
   }
 }
 
-@media screen and (max-width:720px){
-  html{
-    font-size:12px;
-  }
-}
 

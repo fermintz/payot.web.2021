@@ -1,0 +1,137 @@
+.customer{
+  padding-bottom:100px;
+  padding-top:150px;
+
+  .cs_title{
+    padding-bottom:40px;
+
+    h2{
+      font-size:36px;
+      font-weight:300;
+    }
+    p{
+      font-size:16px;
+      color:#898989;
+    }
+  }
+
+  h4{
+    font-size:18px;
+    margin-bottom:20px;
+  }
+
+  .data-list{
+    margin:40px 0 100px 0;
+    
+    .row{
+      margin:-15px;
+    }
+    .col-12{
+      padding:15px;
+      margin-bottom:30px;
+    }
+    a{
+      text-decoration: none;
+      color:#292929;
+    }
+    dl{
+      dt{
+        a{
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          padding:20px;
+          height:240px;
+          background:#f8f8f8;
+          border-radius:10px;
+          width:100%;
+          overflow:hidden;
+          cursor: pointer;
+
+          &:hover{
+            background:#f2f2f2;
+          }
+        }
+      }
+      dd{
+        margin-top:15px;
+        text-align:center;
+        span{
+          font-size:16px;
+          display:block;
+        }
+        strong{
+          text-decoration: none;
+          display:line-block;
+          color:#0084DE;
+        }
+      }
+    }
+  }
+
+  .qna-list{
+    dl{
+      position: relative;
+      background:#f8f8f8;
+      border-radius:5px;
+      cursor: pointer;
+      margin-bottom:10px;
+      overflow:hidden;
+      transition: all 0.3s;
+
+      &:hover{
+        background:#f2f2f2;
+      }
+      dt{
+        display:flex;
+        align-items: center;
+        padding:10px 15px;
+        min-height:50px;
+        font-size:16px;
+        font-weight:500;
+
+        span{
+          margin-right:8px;
+          color:#0084DE
+        }
+      }
+      dd{
+        display:flex;
+        overflow:hidden;
+        align-items: center;
+        padding:15px;
+        padding-top:0px;
+        font-size:15px;
+
+      }
+    }
+  }
+
+  dl.on{
+    background:#f2f4fc;
+    transition: all 0.3s;
+
+    &:hover{
+      background:#f2f4fc
+    }
+
+    dt{
+      span{
+        color:#de0059;
+      }
+    }
+
+    dd{
+      height:auto;
+    }
+  }
+}
+
+@media screen and(max-width:1240px) {
+  .customer{
+    padding:0 20px;
+    padding-bottom:100px;
+    padding-top:100px;
+  }
+  
+}

@@ -2,21 +2,25 @@
   <div class="app" data-app>
     <Drawer ref="drawer" />
     <Header @child="drawer"/>
-    <router-view/>
+    <SideBanner />
+    <div class="container">
+      <router-view/>
+    </div>
     <Footer />
-    <Side />
+
   </div>
 </template>
 <script>
-
 import Header from '@/components/header.vue';
 import Footer from '@/components/footer.vue';
-import Side from '@/components/side.vue';
+
 import Drawer from '@/components/drawer.vue';
+import SideBanner from '@/components/sideBanner.vue';
+
 export default {
   name: "App",
   components:{
-    Header,Footer, Side, Drawer
+    Header,Footer, Drawer, SideBanner
   },
   methods:{
     drawer(value){
@@ -25,3 +29,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.container{
+  padding:0;
+  margin:0;
+  max-width:unset;
+}
+</style>

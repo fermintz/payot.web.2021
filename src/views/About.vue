@@ -3,14 +3,13 @@
     <div class="subVisual">
       <div class="subTitle">
         <h4 class="ani">무인매장을 더욱 편리하게</h4>
-        <span class="ani"></span>
         <p class="ani">페이오티</p>
       </div>
       <div class="black"></div>
     </div>
 
     <div class="tab-wrap">
-      <ul :class="{ tabs: true, tabsActive: tabSticky }">
+      <ul class="tabs">
         <li
           :class="{ tab: true, tabActive: tabs === index ? true : false }"
           v-for="(item, index) in items"
@@ -172,11 +171,9 @@
 </template>
 
 <script>
-import History from '@/components/about/history.vue';
-import Location from '@/components/about/location.vue';
+import History from '@/views/about/history.vue';
+import Location from '@/views/about/location.vue';
 import gsap from 'gsap';
-
-
 
 export default {
   components:{
@@ -205,14 +202,14 @@ export default {
 
   },
   methods: {
-    tabFixed() {
-      window.scrollY >= 450
-        ? (this.tabSticky = true)
-        : (this.tabSticky = false);
-    },
-    tabMove(i){
-      this.tabs = i
-      window.scrollTo(0,430)       
+    tabMove(i) {
+      if(window.innerWidth < 960){
+        this.tabs = i;
+        window.scrollTo(0, 0);
+      }else{
+        this.tabs = i;
+        window.scrollTo(0, 430);
+      }
     },
     daily(){
       window.open('https://www.dailywash.co.kr/', '_new')
@@ -224,7 +221,8 @@ export default {
 <style lang="scss" scoped>
 .about {
   height: 100%;
-
+  padding:0 50px;
+  padding-top:100px;
   .inner {
     width:100%;
     max-width: 1280px;
@@ -236,11 +234,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 450px;
     background: #f2f2f2 url("/img/about-bg.jpg") 100% center;
-    border-radius: 15px;
+    border-radius: 30px;
     overflow: hidden;
-    margin:0 30px;
+
 
     .subTitle {
       position: relative;
@@ -253,18 +251,13 @@ export default {
         font-weight: 300;
         letter-spacing: 5px;
       }
-      span {
-        display: inline-block;
-        margin: 20px 0;
-        width: 30px;
-        height: 1px;
-        background: #fff;
-      }
+
       p {
         font-size: 3rem;
         line-height:3rem;
         font-weight: 200;
         color: #fff;
+        margin-top:15px;
       }
     }
 
@@ -275,8 +268,8 @@ export default {
       z-index: 1;
       left: 0;
       top: 0;
-      background:#000;
-      opacity: 0.8;
+      background:rgba(0,0,0,0.6);
+
     }
   }
 
@@ -285,14 +278,20 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height:70px;
       font-size: 1.2rem;
       background:#fff;
       z-index:99;
+      position:sticky;
+      width:100%;
+      top:0px;
 
       .tab {
-        margin: 0 40px;
+        margin-right:70px;
         color: #888;
+        &:last-child{
+          margin-right:0px;
+        }
       }
       .tab:hover {
         cursor: pointer;
@@ -303,25 +302,6 @@ export default {
       }
     }
 
-    .tabsActive {
-      position: fixed;
-      width: 100%;
-      top: 70px;
-      height: 50px;
-      border-bottom: 1px solid #e2e2e2;
-      animation: tabsActive 0.5s forwards;
-      background: #fff;
-
-      @keyframes tabsActive {
-        0% {
-          height: 80px;
-        }
-        100% {
-          height: 50px;
-          font-size: 1rem;
-        }
-      }
-    }
 
     .tab-items {
       margin-top: 70px;
@@ -434,27 +414,36 @@ export default {
 
     .section-03 {
       margin-top: 120px;
+      border-radius:30px;
+      margin-bottom:50px;
       width: 100%;
       min-height:500px;
-      padding: 120px 0;
+      padding: 120px 20px;;
       background:url('/img/about-bg3.jpg') no-repeat;
-      .section-title{
-        padding:30px;
-        background:#fff;
-      }
     }
   }
+}
 
-  @media screen and(max-width:960px) {
+@media screen and(max-width:960px) {
+  .about{
+    padding:0 20px;
+    padding-top:100px;
+  
     .subVisual {
-      margin:0 10px;
+      display:none;
       height:400px;
     }
 
     .tab-wrap {
       .tabs {
-        .tab {
-          margin: 0 20px;
+        top:70px;
+        height:50px;
+        background:#f2f2f2;
+        border-radius:5px;
+        justify-content: space-around;
+
+        .tab{
+          margin-right:0px;
         }
       }
     }

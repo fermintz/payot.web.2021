@@ -1,0 +1,82 @@
+.kiosk-map{
+  position: relative;
+  padding:50px;
+  padding-top:0px;
+
+  .map_control{
+    position: relative;
+  }
+  
+  .map-search{
+    position: absolute;
+    top:15px;
+    left:15px;
+    width:240px;
+    margin-right:20px;
+    border-radius:26px 10px 10px 10px;
+    padding:20px;
+    background:#fff;
+    text-align:center;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    z-index:10;
+    
+    h4{
+      margin-bottom:10px;
+      font-size:14px;
+    }
+
+    .input-box{
+      display:flex;
+      align-items: center;
+      position: relative;
+
+      .v-btn{
+        position: absolute;
+        right:5px;
+        .v-icon{
+          font-size:20px;
+        }
+      }
+      
+      input{
+        height:40px;
+        width:100%;
+        border:1px solid #e2e2e2;
+        border-radius:5px;
+        outline: none;
+        padding:0 40px 0 10px;
+      }
+    }
+  }
+
+
+  .kakao-map{
+    border-radius:30px;
+    overflow:hidden;
+  }
+
+  
+}
+
+@media screen and(max-width:480px){
+  .kiosk-map{
+    padding:20px;
+
+    .map_control{
+      .map-search{
+        position: relative;
+        border:1px solid #e2e2e2;
+        box-shadow: none;
+        border-radius:10px;
+        top:0;
+        left:0;
+        width:100%;
+        margin-bottom:20px;
+      }
+    }
+
+    .kakao-map{
+      border-radius:10px;
+    }
+  } 
+}

@@ -1,35 +1,57 @@
 <template>
-  <div :class="{header:true, header_set:headerState}">
-    <div class="logo">
-      <img src="@/assets/img/logo_b.png" @click="$router.push('/')"/>
+  <div :class="{header:true, header_set:headerState, smartpay:$route.name === 'smartpay'}">
+    <div class="left">
+      <img src="@/assets/img/logo_b.png" @click="$router.push('/')" v-show="headerState ? true : false || $route.name !== 'smartpay'"/>
+      <img src="@/assets/img/logo_w.png" @click="$router.push('/')" v-show="$route.name === 'smartpay' && headerState === false"/>
     </div>
-    <div class="gnb">
-      <ul>
-        <li>
-          <strong @click="$router.push('About')">페이오티 소개</strong>
-          <span></span>
+
+    <div class="center">
+      <ul class="main_menu">
+        <li @click="$router.push('About')">
+          <a>회사소개</a>          
+        </li>
+        <li @click="$router.push('smartpay')">
+          <a>스마트페이</a>
+        </li>
+        <li @click="kiosk('default')">
+          <a>키오스크</a>
+        </li>
+        <li class="buy" @click="$router.push('kiosk-detail')">
+          <a>구매안내</a>
+        </li>
+        <li @click="$router.push('customer')">
+          <a>고객지원</a>
         </li>
         <li>
-          <strong @click="kiosk('default')">무인세탁매장 키오스크</strong>
-          <span></span>
+          <a href="https://blog.naver.com/PostList.naver?blogId=payot_2017&from=postList&categoryNo=9" target="_new">
+            설치사례
+          </a>
         </li>
-        <li class="buy">
-          <strong @click="kiosk('buy')">키오스크 구매안내</strong>
-          <span></span>
-        </li>
-        <li class="admin">
-          <v-btn text @click="adminLink">
-            <v-icon>mdi-storefront-outline</v-icon>
-            <label>무인매장 관리시스템</label>
-          </v-btn>
-        </li>
+        <!-- <li class="buy"  @click="$router.push('shop')">
+          매장 관련용품
+        </li> -->
       </ul>
-      <div class="mobile-gnb">
-        <v-btn text icon @click="drawerUpdate(true)">
-          <v-icon>mdi-menu</v-icon>
-        </v-btn>
-      </div>
-     
+    </div>
+
+    <div class="right">
+      <v-btn icon class="map-btn" @click="$router.push('/kiosk-map')">
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+      <v-btn icon @click="adminLink" class="admin">
+        <v-icon>mdi-storefront-outline</v-icon>
+      </v-btn>
+      <v-btn icon @click="kakaoLink" class="kakao">
+        <img src="/img/kakao.png">
+      </v-btn>      
+    </div>
+
+    <div class="mobile-right">
+      <v-btn @click="kakaoLink" class="kakao" icon>
+        <img src="/img/kakao.png">
+      </v-btn>
+      <v-btn text icon @click="drawerUpdate(true)" class="menu">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
     </div>
   </div>
 </template>
@@ -45,6 +67,7 @@ export default {
   },
   mounted(){
     window.addEventListener('scroll', this.headerSet);
+    console.log(window.matchMedia().matches)
   },
   methods:{
     headerSet(){
@@ -58,6 +81,9 @@ export default {
     },
     adminLink(){
       window.open('http://www.coin-machine.com','_new')
+    },
+    kakaoLink(){
+      window.open('https://pf.kakao.com/_uAqmK/chat','_new')
     }
   },
 
@@ -66,27 +92,20 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  top:0px;
   width: 100%;
   height: 100px;
   padding: 0 50px;
   z-index: 99;
-  background:transparent;
-  animation: headerBack 0.3s forwards linear;
-
-  @keyframes headerBack {
-    0%{height:70px;}
-    100%{height:100px;}
-  }
-
-  .logo {
+  transition:height 0.5s ease;
+ 
+  .left {
     display:flex;
     align-items: center;
-    
-
     img {
       display: block;
       height: 40px;
@@ -99,107 +118,123 @@ export default {
       margin-left:20px;
     }
   }
-  .gnb {
 
-    display:flex;
+
+  .main_menu{
+    display: flex;
     align-items: center;
 
-    ul {
-      display: flex;
-      align-items: center;
-      li {
-        position: relative;
-        margin: 0 30px;
-        font-size: 1.15rem;
-        color: #494949;
-
-        strong{font-weight:300;}
-
-        .v-btn{
-          min-height:40px;
-          background:#fff;
-          border:2px solid #EF1682;
-          font-weight:300;
-          color:#EF1682;
-          border-radius:20px;
-
-          .v-icon{margin-right:5px;}
-        }
-      }
-
-      li:hover{
-        cursor: pointer;
-        a{color:#0084DE}
-        span{
-          position:absolute;
-          bottom:-5px;
-          height:2px;
-          background:#0084DE;
-          animation: underline 0.2s forwards ease-out;
-        }
-
-        @keyframes underline {
-          0%{left:50%;right:50%;width:0;}
-          100%{left:0;right:0;width:100%}
-        }
-      }
-
-      li:last-child{
-        margin-right:0px;
-      }
+    li {
+      position: relative;
+      margin-right:70px;
       
-    }
+      a{
+        font-size: 18px;
+        color:#595959;
+        text-decoration:none;
+      }
 
-    .sns{
-      display:flex;
-      align-content: center;
-      margin-left:50px;
+      a:hover{
+        cursor: pointer;
+        color: #de0059;
+      }
 
-      span{
-        display:block;
-        margin:0 10px;
-        width:40px;
-        height:40px;
-        img{width:100%;display:block;}
+      &:last-child{
+        margin-right:0;
       }
     }
-    .mobile-gnb {
-      display:none;
-      .v-btn {
-        width: 50px;
-        height: 50px;
-        color: #494949;
+  }
+
+  
+}
+
+.right{
+  .v-btn{
+    width:40px;
+    height:40px;
+    margin-left:15px;
+
+    &:first-child{
+      margin-left:0px;
+    }
+
+    img{
+      height:20px;
+    }
+  }
+  .v-btn.map-btn{
+    background:#5e58a6;
+    color:#fff;
+  }
+  .v-btn.admin{
+    background:#de0059;
+    color:#fff;
+  }
+  .v-btn.kakao{
+    background:#FFEB00
+  }
+} 
+
+.mobile-right {
+  display:none;
+
+  .v-btn {
+    width: 40px;
+    height: 40px;
+    color: #494949;
+    margin-left:10px;
+    background:#f2f2f2;
+  }
+
+  .v-btn.kakao{
+    background:#FFEB00;
+    img{
+      height:24px;
+    }
+  }
+}
+
+.smartpay{
+  .main_menu{
+    li{
+      a{
+        color:#fff;
       }
     }
   }
 }
 
-.header_set{  
-  animation: headerBg 0.3s forwards linear;
+.header_set{
+  position: sticky;
+  height:70px;
   position: fixed;
+  background:#fff;
 
-  @keyframes headerBg {
-    0%{
-      background:transparent;
-      border-bottom:0px;
-    }
-    100%{
-      background:#fff;
-      border-bottom:1px solid #efefef;
-      height:70px;
+  .main_menu{
+    li{
+      a{
+        color:#595959;
+      }
     }
   }
 }
 
-@media screen and(max-width:720px){
+@media screen and(max-width:1200px){
   .header{
-    padding:0;
-    .logo{
-      margin-left:15px;
+    padding:0 20px;
+    .main_menu{
+      display:none;
     }
-    .gnb{
-      ul{display:none;}
-      .mobile-gnb{display:block}
+    .right{
+      display:none; 
+    }
+    .mobile-right{
+      display:block;
+
+      .menu{
+        border:2px solid #e2e2e2;
+        background:#fff;
+      }
     }
   }
 }

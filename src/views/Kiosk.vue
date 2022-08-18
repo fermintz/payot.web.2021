@@ -3,24 +3,14 @@
     <div class="subVisual">
       <div class="subTitle">
         <h4 class="ani">편리한 매장 스마트한 관리</h4>
-        <span class="ani"></span>
         <p class="ani">무인세탁매장 키오스크</p>
       </div>
       <div class="black"></div>
     </div>
 
-    <div class="mobile-visual">
-      <div class="subTitle">
-        <h4>편리한 매장<br />스마트한 관리</h4>
-        <p>무인세탁매장 키오스크</p>
-      </div>
-      <div class="visual">
-        <img src="/img/mobile-kiosk.png" />
-      </div>
-    </div>
 
     <div class="tab-wrap">
-      <ul :class="{ tabs: true, tabsActive: tabSticky }">
+      <ul class="tabs">
         <li
           :class="{ tab: true, tabActive: tabs === i ? true : false }"
           v-for="(item, i) in items"
@@ -47,28 +37,21 @@
           <Sales />
         </div>
       </v-slide-x-transition>
-
-      <v-slide-x-transition>
-        <div class="tab-items" v-show="tabs === 3">
-          <Price />
-        </div>
-      </v-slide-x-transition>
     </div>
   </div>
 </template>
 
 <script>
-import Intro from "@/components/kiosk/intro.vue";
-import Smart from "@/components/kiosk/smart.vue";
-import Sales from "@/components/kiosk/sales.vue";
-import Price from "@/components/kiosk/price.vue";
+import Intro from "@/views/kiosk/intro.vue";
+import Smart from "@/views/kiosk/smart.vue";
+import Sales from "@/views/kiosk/sales.vue";
+
 import gsap from 'gsap';
 export default {
   components: {
     Intro,
     Smart,
     Sales,
-    Price,
   },
   props: {
     tab: String,
@@ -80,7 +63,6 @@ export default {
         "키오스크 소개",
         "스마트 운영관리",
         "정확한 매출관리",
-        "키오스크 구매안내",
       ],
       text: "dasdsadasdsadsa",
       tabSticky: false,
@@ -91,9 +73,9 @@ export default {
       immediate: true,
       handler: function(query) {
         switch (query) {
-          case 'buy':
-            this.tabs = 3;
-            this.tabMove(3);
+          case 'sales':
+            this.tabs = 2;
+            this.tabMove(2);
             break;
           default:
             this.tabs = 0;
@@ -117,42 +99,35 @@ export default {
     })
   },
   methods: {
-    tabFixed() {
-      if(window.innerWidth < 960){
-        window.scrollY >= 320
-        ? (this.tabSticky = true)
-        : (this.tabSticky = false);
-      }else{
-        window.scrollY >= 450
-        ? (this.tabSticky = true)
-        : (this.tabSticky = false);
-      }
-    },
+ 
     tabMove(i) {
       if(window.innerWidth < 960){
         this.tabs = i;
-        window.scrollTo(0, 320);
+        window.scrollTo(0, 0);
       }else{
         this.tabs = i;
         window.scrollTo(0, 430);
       }
-      
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.kiosk-wrap{
+  padding:0 50px;
+  padding-top:100px;
+}
 .subVisual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 500px;
+  height: 450px;
   background: #f2f2f2 url("/img/kiosk-bg.jpg") 100%;
-  border-radius: 15px;
+  border-radius: 30px;
   overflow: hidden;
-  margin: 0 30px;
+
 
   .subTitle {
     position: relative;
@@ -165,18 +140,12 @@ export default {
       font-weight: 300;
       letter-spacing: 5px;
     }
-    span {
-      display: inline-block;
-      margin: 20px 0;
-      width: 30px;
-      height: 1px;
-      background: #c2c2c2;
-    }
     p {
       font-size: 3rem;
       line-height: 3rem;
       font-weight: 200;
       color: #292929;
+      margin-top:15px;
     }
   }
 
@@ -203,17 +172,24 @@ export default {
     display: block;
 
     .tabs {
+      width:100%;
+      position: sticky;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height:70px;
       font-size: 1.2rem;
       background: #fff;
       z-index: 99;
+      top:0px;
 
       .tab {
-        margin: 0 40px;
+        margin-right:70px;
         color: #888;
+
+        &:last-child{
+          margin-right:0px;
+        }
       }
       .tab:hover {
         cursor: pointer;
@@ -223,90 +199,33 @@ export default {
         color: #0084de;
       }
     }
-
-    .tabsActive {
-      position: fixed;
-      width: 100%;
-      top: 70px;
-      height: 50px;
-      border-bottom: 1px solid #e2e2e2;
-      animation: tabsActive 0.5s forwards;
-      background: #fff;
-
-      @keyframes tabsActive {
-        0% {
-          height: 80px;
-        }
-        100% {
-          height: 50px;
-          font-size: 1rem;
-        }
-      }
-    }
+   
   }
 }
 
 @media screen and(max-width:960px) {
+  .kiosk-wrap{
+    padding:0 20px;
+    padding-top:100px;
+
+  }
   .subVisual {
     display: none;
   }
-  .mobile-visual {
-    position: relative;
-    display: flex;
-    background: #f8f8f8;
-    height: 400px;
-    margin: 0 10px;
-    border-radius: 15px;
-
-    .subTitle {
-      position: absolute;
-      width: 50%;
-      left: 30px;
-      top: 30px;
-      h4 {
-        font-size: 2.5rem;
-      }
-      p {
-        font-size: 1.4rem;
-        margin-top: 10px;
-        color: #888;
-      }
-    }
-
-    .visual {
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-end;
-      flex: 1;
-
-      img {
-        height: 250px;
-        display: block;
-      }
-    }
-  }
-
+  
   .kiosk-wrap {
     display: block;
 
     .tab-wrap {
-      display: block;
-
       .tabs {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-        font-size: 1.2rem;
-        background: #fff;
-        z-index: 99;
+        top:70px;
+        height:50px;
+        background:#f2f2f2;
+        border-radius:5px;
+        justify-content: space-around;
 
-        .tab {
-          flex:1;
-          text-align: center;
-          margin: 0px;
-          padding:0 10px;
+        .tab{
+          margin-right:0px;
         }
 
       }

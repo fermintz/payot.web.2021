@@ -10,8 +10,8 @@ export function daumSearch(type) {
       url,
       headers: { Authorization: `KakaoAK ${SERVICE_KEY}` },
       params: {
-        query: "페이오티",
-        size: 3,
+        query: "페이오티 키오스크",
+        size: 6,
       },
     })
     .then(({ data }) => data);

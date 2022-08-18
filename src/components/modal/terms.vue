@@ -37,8 +37,6 @@ export default {
       userTerms:{
         body: info.replace(/\n/g, '<br />')
       }
-      
-
     }
   },
   methods:{

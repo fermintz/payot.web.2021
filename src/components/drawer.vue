@@ -11,18 +11,44 @@
         <img src="@/assets/img/logo_b.png" @click="$router.push('/')"/>
       </div>
       <ul class="menu">
-        <li v-ripple @click="$router.push('About')">페이오티 소개</li>
-        <li v-ripple @click="kiosk('default')">무인세탁매장 키오스크</li>
-        <li v-ripple @click="kiosk('buy')">키오스크 구매안내</li>
+        <li v-ripple @click="$router.push('About')">
+          <a>회사소개</a>
+        </li>
+        <li @click="$router.push('smartpay')">
+          <a>스마트페이</a>
+        </li>
+        <li v-ripple @click="kiosk('default')">
+          <a>키오스크</a>
+        </li>
+        <li v-ripple @click="$router.push('kiosk-detail')">
+          <a>구매안내</a>
+        </li>
+        <li v-ripple @click="$router.push('customer')">
+          <a>고객지원</a>
+        </li>
+        <li>
+          <a href="https://blog.naver.com/PostList.naver?blogId=payot_2017&from=postList&categoryNo=9" target="_new">
+            설치사례
+          </a>
+        </li>
       </ul>
       <div class="btns">
-        <v-btn text>
+        
+        <v-btn text @click="kakaoLink" class="kakao">
+          <img src="/img/kakao.png">
+          <label>카카오톡 상담하기</label>
+        </v-btn>
+        <v-btn text @click="$router.push('kiosk-map')" class="map-btn">
+          <v-icon>mdi-map</v-icon>
+          <label>설치매장 지도</label>
+        </v-btn>
+        <v-btn text @click="adminLink" class="admin">
           <v-icon>mdi-storefront-outline</v-icon>
           <label>무인매장 관리시스템</label>
         </v-btn>
       </div>
     </div>
-    <div class="overlay" />
+    <!-- <div class="overlay" /> -->
   </v-navigation-drawer>
 </template>
 
@@ -40,6 +66,12 @@ export default {
     kiosk(value){
       this.$router.push({ name: 'Kiosk', query: { tab:value }});
     },
+    adminLink(){
+      window.open('http://www.coin-machine.com/login','_new')
+    },
+    kakaoLink(){
+      window.open('https://pf.kakao.com/_uAqmK/chat','_new')
+    }
   }
 }
 </script>
@@ -53,13 +85,15 @@ export default {
   z-index:999;
 }
 
-.overlay{
+/* .overlay{
   position: fixed;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.8);
+  background:#0000001a;
+  backdrop-filter: blur(7px);
   z-index:888
-}
+} */
+
 .logo{
   padding:20px;
   display:flex;
@@ -78,9 +112,20 @@ ul.menu{
   li{
     display:flex;
     align-items: center;
-    font-size:15px;
     height:45px;
     padding:0 10px;
+    cursor: pointer;
+
+    &:hover{
+      background:#f8f8f8;
+      border-radius:5px;
+    }
+
+    a{
+      text-decoration: none;
+      color:#292929;
+      font-size:15px;
+    }
   }
 }
 .btns{
@@ -96,11 +141,42 @@ ul.menu{
     width:90%;
     font-size:14px;
     min-height:40px;
-    border-radius:20px;
+    border-radius:4px;
     font-weight:400;
-    border:2px solid #EF1682;
-    color:#EF1682;
-    .v-icon{margin-right:5px;}
+    font-size:12px;
+  }
+
+  .v-btn.map-btn{
+    border:1px solid #5e58a6;
+    color:#292929;
+    margin-bottom:10px;
+
+    .v-icon{
+      color:#5e58a6;
+      margin-right:5px;
+      font-size:18px;
+    }
+  }
+  .v-btn.kakao{
+    background:#f5e000;
+    color:#292929;
+    margin-bottom:10px;
+
+    img{
+      display:block;
+      height:20px;
+      margin-right:5px;
+    }
+  }
+  .v-btn.admin{
+    border:1px solid #EF1682;
+    color:#292929;
+
+    .v-icon{
+      color:#EF1682;
+      margin-right:5px;
+      font-size:18px;
+    }
   }
 }
 </style>
