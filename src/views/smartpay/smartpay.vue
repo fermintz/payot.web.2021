@@ -32,7 +32,7 @@
         </svg>
       </div>
       
-      <p>스마트페이는 QR코드를 활용한 세탁장비 결제시스템입니다.<br>전용 앱 설치없이 기본카메라로 QR코드를 스캔하여 장비를 결제할 수 있습니다</p>
+      <p>스마트페이는 QR코드를 활용한 세탁장비 결제시스템입니다</p>
       <div class="bg">
         <video autoplay loop id="video-bg" muted>
           <source src="/video/smartpay.mp4" type="video/mp4" poster="/img/smartpay/smart03.jpg">
@@ -59,7 +59,7 @@
           <h2>어플없는 간편결제 스마트페이</h2>
           <p>
             QR코드를 스캔만 하면 휴대폰이 작은 키오스크가 되어 쉽고 간편하게
-            결제할 수 있습니다.<br />
+            결제할 수 있습니다<br />
             포인트적립, 매출집계, 문자마케팅, 원격제어를 통한 장비 동전 투입 등
             다양한 기능을 통해 매장을 더욱 쉽고 편리하게 운영할 수 있습니다
           </p>
@@ -68,7 +68,7 @@
         <v-row>
           <v-col cols="12" md="6">
             <img src="/img/smartpay/smart02.jpg" />
-            <p>동전만 결제만 가능하던 세탁장비에<br />다양한 결제채널 추가</p>
+            <p>동전 사용만 가능하던 세탁 장비에<br>다양한 결제 채널 추가</p>
           </v-col>
           <v-col cols="12" md="6">
             <img src="/img/smartpay/smart03.jpg" />
@@ -83,10 +83,24 @@
         <dl>
           <dt>스마트페이에서<b>지원되는 간편결제</b></dt>
           <dd>
-            <img src="/img/pay01.png" />
-            <img src="/img/pay02.png" />
-            <img src="/img/pay03.png" />
-            <img src="/img/pay04.png" />
+            <span>
+              <img src="/img/pay01.png" />
+              <label>삼성페이</label>
+            </span>
+            <span>
+              <img src="/img/pay02.png" />
+              <label>카카오페이</label>
+            </span>
+            <span>
+              <img src="/img/pay03.png" />
+              <label>네이버페이</label>
+            </span>
+            <span>
+              <img src="/img/pay04.png" />
+              <label>페이코</label>
+            </span>
+
+
           </dd>
         </dl>
       </div>
@@ -208,7 +222,7 @@
         <div class="title">
           <h2>매장운영에 필요한 <b>모든 것을 담았습니다</b></h2>
           <p>
-            언제 어디서든 내 매장을 관리하고, 홍보할 수 있는 훌룡한 방법들을
+            언제 어디서든 내 매장을 관리하고 홍보할 수 있는 훌륭한 방법들을
             제공합니다
           </p>
         </div>
@@ -216,11 +230,11 @@
         <v-row class="info_1">
           <v-col cols="12" md="6">
             <div class="text">
-              <h3>클레임처리를 간편하게 장비 원격제어 시스템</h3>
+              <h3>클레임처리를 간편하게, 장비 원격제어 시스템</h3>
               <p>
-                매장이 상주하지 않아도 간편하게 클레임처리가 가능합니다 장비원격
+                매장에 상주하지 않아도 간편하게 클레임처리가 가능합니다 장비원격
                 투입기능을 통해 스마트폰으로 간단하게 장비에 코인(동전)을 넣어
-                줄 수 있습니다.
+                줄 수 있습니다
               </p>
             </div>
           </v-col>
@@ -340,42 +354,6 @@
       </div>
     </section>
 
-    <section class="section_7">
-      <div class="inner">
-        <div class="title">
-          <h1>SMART <b>PAY</b></h1>
-          <h3><span>스마트페이 가격안내</span></h3>
-        </div>
-        <div class="visual">
-          <div class="image">
-            <img src="/img/smartpay/smartpay_price.png" alt="스마트페이" />
-            <span>
-            </span>
-          </div>
-        </div>
-
-        <div class="price_info">
-          <div class="row">
-            <dl>
-              <dt>설치비용</dt>
-              <dd>132만원</dd>
-            </dl>
-            <div class="divider"></div>
-            <dl>
-              <dt>월 관리비</dt>
-              <dd>33,000원</dd>
-            </dl>
-          </div>
-          <p>
-            <span>부가세가 포함된 가격입니다</span>
-            <span
-              >설치비용은 10대기준이며 그 이상시
-              <b>1대당 13만2천원</b> 추가부과됩니다</span
-            >
-          </p>
-        </div>
-      </div>
-    </section>
     <section class="section_8">
       <div class="bg"></div>
       <div class="inner">
@@ -400,16 +378,64 @@
                 2
               </strong>
               <span
-                >기존 페이오티 키오스크를 이용중이시라면 <b>스마트페이를 무료</b>로
-                이용 가능합니다 (요청필수)</span
+                >기존 페이오티 키오스크를 이용중이시라면 <b>스마트페이</b>
+                 이용이 가능합니다 (요청필수)</span
               >
             </div>
           </v-col>
           <v-spacer></v-spacer>
         </v-row>
-        <p>* 기존 사용하고있는 키오스크의 회원정보(포인트) 및 관리자는 스마트페이와 함께 사용할 수 있습니다.</p>
+        <p>* 기존 사용하고있는 키오스크의 회원정보(포인트) 및 관리자는 스마트페이와 함께 사용할 수 있습니다</p>
       </div>
     </section>
+
+    <section class="section_7">
+      <div class="inner">
+        <div class="title">
+          <h1>SMART <b>PAY</b></h1>
+          <h3><span>스마트페이 가격안내</span></h3>
+        </div>
+        <div class="visual">
+          <div class="image">
+            <img src="/img/smartpay/smartpay_price.png" alt="스마트페이" />
+            <span>
+            </span>
+          </div>
+        </div>
+
+        <div class="price_info">
+          <div class="row">
+            <dl>
+              <dt>설치비용</dt>
+              <dd>132만원</dd>
+            </dl>
+            <div class="divider"></div>
+            <dl>
+              <dt>월 사용료</dt>
+              <dd>33,000원</dd>
+            </dl>
+          </div>
+          <p>
+            <span>부가세가 포함된 가격입니다</span>
+            <span
+              >설치비용은 10대기준이며 초과 시
+              <b>1대당 13만2천원</b> 추가부과됩니다</span
+            >
+          </p>
+          
+        </div>
+
+        <div class="btns">
+          <v-btn text
+            @click="smartpay"
+          >
+            스마트페이 신청하기
+            <v-icon>mdi-chevron-right</v-icon>
+          </v-btn>
+        </div>
+      </div>
+    </section>
+    
   </div>
 </template>
 
@@ -445,6 +471,9 @@ export default {
       top:window.innerHeight,
       behavior:'smooth',
     })
+    },
+    smartpay(){
+      window.open('https://pf.kakao.com/_uAqmK/chat','_new')
     },
 
     kakaoLink() {

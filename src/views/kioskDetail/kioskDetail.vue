@@ -46,11 +46,11 @@
                 <dt>판매가격</dt>
                 <dd>
                   <div class="item normal">
-                    <span>일반형</span>
+                    <span>일반형 32인치</span>
                     <strong>4,500,000</strong>
                   </div>
                   <div class="item stand">
-                    <span>스탠드형</span>
+                    <span>스탠드형 24인치</span>
                     <strong>4,800,000</strong>
                   </div>
                   <p>부가세는 별도입니다.</p>
@@ -63,7 +63,7 @@
               </dl>
               <div class="divider" />
               <dl class="members">
-                <dt>월 관리비</dt>
+                <dt>월 사용료</dt>
                 <dd>
                   <!-- <div class="item">
                     <span>베이직</span>
@@ -118,7 +118,7 @@
 
     <div class="section members-detail" v-show="false">
       <div class="inner">
-        <div class="sec-title">월 관리비 안내</div>
+        <div class="sec-title">월 사용료 안내</div>
 
         <ul class="list">
           <li class="list-hd">
@@ -260,14 +260,15 @@
         <v-row>
           <v-col cols="12" md="6">
             <dl>
-              <dt><img src="/img/kiosk-detail/stand-size.jpg"></dt>
-              <dd>스탠드형</dd>
+              <dt><img src="/img/kiosk-detail/normal-size.jpg"></dt>
+              
+              <dd>일반형(매립형)</dd>
             </dl>
           </v-col>
           <v-col cols="12" md="6">
             <dl>
-              <dt><img src="/img/kiosk-detail/normal-size.jpg"></dt>
-              <dd>일반형(매립형)</dd>
+              <dt><img src="/img/kiosk-detail/stand-size.jpg"></dt>
+              <dd>스탠드형</dd>
             </dl>
           </v-col>
         </v-row>
@@ -280,40 +281,99 @@
           제품사양
         </div>
 
-        <table cellspacing="0" cellpadding="0">
-          <tr>
-            <th>모니터</th>
-            <td>32인치 정전식 모니터</td>
-          </tr>
-          <tr>
-            <th>운영체제</th>
-            <td>Windows 10 Pro (64bit)</td>
-          </tr>
-          <tr>
-            <th>메인보드</th>
-            <td>GIGBYTE</td>
-          </tr>
-          <tr>
-            <th>CPU</th>
-            <td>인텔/셀러론-J3160/4500C/N5105</td>
-          </tr>
-          <tr>
-            <th>메모리</th>
-            <td>DDR3L 8GB</td>
-          </tr>
-          <tr>
-            <th>저장장치</th>
-            <td>SSD 120GB</td>
-          </tr>
-          <tr>
-            <th>무선</th>
-            <td>802.11ac (WI-FI5)</td>
-          </tr>
-          <tr>
-            <th>기타</th>
-            <td>Bluetooth</td>
-          </tr>        
-        </table>
+        <v-row>
+          <v-col cols="12" md="6">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <th>제품명</th>
+                <td>키오스크 일반형</td>
+              </tr>
+              <tr>
+                <th>모니터</th>
+                <td>32인치 정전식 모니터</td>
+              </tr>
+              <tr>
+                <th>사이즈</th>
+                <td>넓이 480mm x 높이 1030mm</td>
+              </tr>
+              <tr>
+                <th>운영체제</th>
+                <td>Windows 10 Pro (64bit)</td>
+              </tr>
+              <tr>
+                <th>메인보드</th>
+                <td>GIGBYTE</td>
+              </tr>
+              <tr>
+                <th>CPU</th>
+                <td>인텔/셀러론-J3160/4500C/N5105</td>
+              </tr>
+              <tr>
+                <th>메모리</th>
+                <td>DDR3L 8GB</td>
+              </tr>
+              <tr>
+                <th>저장장치</th>
+                <td>SSD 120GB</td>
+              </tr>
+              <tr>
+                <th>무선</th>
+                <td>802.11ac (WI-FI5)</td>
+              </tr>
+              <tr>
+                <th>기타</th>
+                <td>Bluetooth</td>
+              </tr>        
+            </table>
+          </v-col>
+
+          <v-col cols="12" md="6">
+            <table cellspacing="0" cellpadding="0">
+              <tr>
+                <th>제품명</th>
+                <td>키오스크 스탠드형</td>
+              </tr>
+              <tr>
+                <th>모니터</th>
+                <td>24인치 정전식 모니터</td>
+              </tr>
+              <tr>
+                <th>사이즈</th>
+                <td>넓이 445mm x 높이 1615mm x 두께 125mm (하단두께 330mm)</td>
+              </tr>
+              <tr>
+                <th>운영체제</th>
+                <td>Windows 10 Pro (64bit)</td>
+              </tr>
+              <tr>
+                <th>메인보드</th>
+                <td>GIGBYTE</td>
+              </tr>
+              <tr>
+                <th>CPU</th>
+                <td>인텔/셀러론-J3160/4500C/N5105</td>
+              </tr>
+              <tr>
+                <th>메모리</th>
+                <td>DDR3L 8GB</td>
+              </tr>
+              <tr>
+                <th>저장장치</th>
+                <td>SSD 120GB</td>
+              </tr>
+              <tr>
+                <th>무선</th>
+                <td>802.11ac (WI-FI5)</td>
+              </tr>
+              <tr>
+                <th>기타</th>
+                <td>Bluetooth</td>
+              </tr>        
+            </table>
+          </v-col>
+        </v-row>
+
+        
       </div>
     </div>
 

@@ -89,8 +89,6 @@ export default {
           return;
         }
 
-        console.log(data)
-
         this.map.setCenter(new kakao.maps.LatLng(data[0].y, data[0].x));
         this.map.setLevel(5)
       });

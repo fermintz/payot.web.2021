@@ -400,6 +400,8 @@
         </div>
       </div> <!-- section-6 -->
 
+
+
     </div>  <!--contents -->
   </div>
 </template>
@@ -408,9 +410,10 @@
 <script>
 import { daumSearch } from "@/utils/KakaoSearch";
 
+
 export default {
   components:{
-  
+ 
   },
   data(){
     return{
@@ -514,7 +517,9 @@ export default {
     this.counting()
 
     daumSearch('blog').then((data) => {
-      this.blogPosts = data.documents;
+      const datas = data.documents;
+      console.log(datas)
+      this.blogPosts = datas.sort((a, b) => Date.parse(b.datetime) - Date.parse(a.datetime));
     });
 
     this.saFunc();
@@ -525,7 +530,7 @@ export default {
 
     counting(){
       setInterval(()=>{
-        if(this.count == 600){
+        if(this.count == 700){
           clearInterval(this.counting);
           return false
         }

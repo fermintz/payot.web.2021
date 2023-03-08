@@ -4,55 +4,29 @@
   min-height:720px;
 }
 
-.divider{
-  height:3px;
-  background:#292929;
-  margin-top:10px;
-}
 
 .inner{
   padding:0 25px;
 }
 
-ul{
-  li{
-    display:flex;
-    padding:20px 0;
-    border-bottom:1px solid #e2e2e2;
-    gap:30px;
-    .photo{
-      display:flex;
-      align-items: center;
-      justify-content: center;
-      width:100px;
-      height:100px;
-      border-radius:10px;
-      background:#f8f8f8;
-      .v-icon{
-        font-size:32px;
-      }
-    }
+.search_bar{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:50px;
 
-    .text{
-      display:flex;
-      flex-direction: column;
-      flex:1;
-      gap:5px;
-      strong{
-        font-size:20px;
-      }
-      span{
-        display:block;
-      }
-    }
+  label{
+    font-size: 32px;
+    font-weight:600;
+  }
+
+  .v-text-field{
+    max-width:300px;
   }
 }
 
-
-@media screen and (max-width: 720px){
-  ul{
-    li{
-      flex-direction: column;
-    }
-  }
+.pagination{
+  margin-top:50px;
 }
+
+

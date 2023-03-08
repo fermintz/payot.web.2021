@@ -1,7 +1,7 @@
 .kiosk-map{
   position: relative;
   padding:50px;
-  padding-top:0px;
+  padding-top:100px;
 
   .map_control{
     position: relative;
@@ -61,6 +61,7 @@
 @media screen and(max-width:480px){
   .kiosk-map{
     padding:20px;
+    padding-top:100px;
 
     .map_control{
       .map-search{

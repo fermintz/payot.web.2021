@@ -485,10 +485,12 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("resize", this.onScreenSizeChange);
+    
+    window.addEventListener("resize", this.onScreenSizeChange)
 
     daumSearch('blog').then((data) => {
       this.blogPosts = data.documents;
+      console.log('ddd')
     });
 
     gsap.registerPlugin(scrollTrigger)

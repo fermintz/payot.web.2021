@@ -70,9 +70,9 @@
           </dd>
         </dl>
         <dl class="qna-item">
-          <dt><span class="icon">+</span> 월 관리비는 어떻게 되나요?</dt>
+          <dt><span class="icon">+</span> 월 사용료는 어떻게 되나요?</dt>
           <dd class="qua-item-cont">
-            키오스크 월 관리비는 33,000원 입니다.
+            키오스크 월 사용료 33,000원 입니다.
           </dd>
         </dl>
         <dl class="qna-item">

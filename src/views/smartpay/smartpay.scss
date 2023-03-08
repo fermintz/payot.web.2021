@@ -356,10 +356,17 @@ section.section_2 {
         display: flex;
         align-items: center;
         gap: 20px;
-
-        img {
-          max-height: 80px;
+        
+        span{
+          display:flex;
+          flex-direction: column;
+          gap:10px;
+          align-items: center;
+          img {
+            max-height: 80px;
+          }
         }
+        
       }
     }
   }
@@ -487,7 +494,7 @@ section.section_5 {
 }
 
 section.section_6 {
-  background: #edf1fd;
+
 
   .title {
     text-align: center;
@@ -662,6 +669,26 @@ section.section_6 {
       margin: 0 50px;
     }
   }
+
+  .btns{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:70px;
+
+    .v-btn{
+      height:70px;
+      padding:0 50px;
+      color:#fff;
+      font-size:18px;
+      background:#000;
+      border-radius:100px;
+      .v-icon{
+        margin-left:10px;
+      }
+    }
+  }
 }
 
 .section_8 {
@@ -734,6 +761,8 @@ section.section_6 {
     margin-top:50px;
     color:#fff;
   }
+
+  
 }
 
 @media screen and (max-width: 960px) {

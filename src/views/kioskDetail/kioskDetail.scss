@@ -358,6 +358,12 @@
   }
 
   .product-spec{
+    .row{
+      margin:-50px;
+    }
+    .col-12{
+      padding:50px;
+    }
     table{
       width:100%;
       border-top:1px solid #292929;

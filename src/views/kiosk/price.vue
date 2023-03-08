@@ -22,7 +22,7 @@
               </dd>
             </dl>
             <dl class="admin-price">
-              <dt>관리비</dt>
+              <dt>사용료</dt>
               <dd>
                 <span>일반 15,000원</span>
                 <span>프리미엄 30,000원</span>
@@ -54,7 +54,7 @@
     <div class="section section-2">
       <div class="inner">
         <div class="section-title">
-          <h4>관리비 안내</h4>
+          <h4>사용료 안내</h4>
           <p>프리미엄 멤버십에서 더욱 다양한 기능을 만나보세요!</p>
         </div>
         <v-row>
