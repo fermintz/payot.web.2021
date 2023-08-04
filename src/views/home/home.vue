@@ -1,6 +1,25 @@
 <template>
   <div class="home">
     <div class="contents">
+      <div class="mobile-visual">
+        <v-carousel
+          v-model="mobileVisualIndex"
+          hide-delimiters
+          height="auto"
+          cycle
+          :show-arrows="false"
+          @change="e => visualChange(e)"
+          interval="6000"
+        >
+          <v-carousel-item v-for="(item,i) in mobileVisual" :key="i">
+            <a :href="item.link" :target="item.target">
+              <div class="image">
+                <img :src="'/img/home/' + item.image">
+              </div>
+            </a>
+          </v-carousel-item>
+        </v-carousel>
+      </div>
       <div class="main-visual">
         <v-carousel
           v-model="mainVisualIndex"
@@ -311,7 +330,7 @@
             <v-spacer />
             <v-col cols="12" md="7" >
               <v-row class="brands">
-                <v-col cols="4" md="3" v-for="(item, i) in 17" :key="i">
+                <v-col cols="4" md="3" v-for="(item, i) in 19" :key="i">
                   <div class="brand-item sa sa-up" :data-sa-delay="i * 50" data-sa-margin="0">
                     <img :src="'/img/partner' + (i + 1) +'.png'" />
                   </div>
@@ -399,36 +418,45 @@
           
         </div>
       </div> <!-- section-6 -->
-
-
-
     </div>  <!--contents -->
+
+    <Notice />
   </div>
 </template>
 
 
 <script>
 import { daumSearch } from "@/utils/KakaoSearch";
-
+import Notice from '@/components/modal/notice'
 
 export default {
   components:{
- 
+    Notice
   },
   data(){
     return{
       count:0,
       mainVisualIndex:0,
+      mobileVisualIndex:0,
       blogPosts: [],
-      mainVisual:[
+      mobileVisual:[
         {
-          light:false,
-          text:'키오스크 없이, 어플 설치없이',
-          subText:'동전으로만 결제할 수 있었던 세탁장비를 스마트페이 QR코드를 통해 신용카드로 결제할 수 있습니다',
-          image:'mainVisual05.png',
-          link:'./smartpay',
-          target:'_self'
+          link:'/kiosk',
+          image:'mobile_sb00.png',
+          target:'_self',
         },
+        {
+          link:'/kiosk-mini',
+          image:'mobile_sb01.png',
+          target:'_self',
+        },
+        {
+          link:'/smartpay',
+          image:'mobile_sb02.png',
+          target:'_self',
+        },
+      ],
+      mainVisual:[
         {
           light:false,
           text:'일반 무인세탁매장을 스마트 무인매장으로',
@@ -459,6 +487,22 @@ export default {
           subText:'PC/모바일로 쉽고 간편하게 관리하는 스마트 무인세탁매장 페이오티 관리시스템, 지금 바로 시작하세요',
           image:'mainVisual01.png',
           link:'./kiosk?tab=default',
+          target:'_self'
+        },
+        {
+          light:true,
+          text:'키오스크 미니 출시!',
+          subText:'소규모 무인세탁매장을 위한 스마트 매장관리 솔루션',
+          image:'mainVisual00.png',
+          link:'./kiosk-mini',
+          target:'_self'
+        },
+        {
+          light:false,
+          text:'키오스크 없이, 어플 설치없이',
+          subText:'동전으로만 결제할 수 있었던 세탁장비를 스마트페이 QR코드를 통해 신용카드로 결제할 수 있습니다',
+          image:'mainVisual05.png',
+          link:'./smartpay',
           target:'_self'
         },
         

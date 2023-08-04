@@ -7,7 +7,7 @@
     <div class="section-01">
       <div class="inner">
         <div class="main-visual">
-          <v-carousel 
+          <v-carousel
             v-model="carousel"
             hide-delimiters
             interval="5000"
@@ -21,30 +21,37 @@
                 <div class="visual-title">
                   <div class="text">
                     <span class="slideUp">PAYOT SMART SYSTEM</span>
-                    <h2 class="slideUp"><strong>업계 유일 동전매출 집계</strong> 빨래방 간편하게 관리하세요!</h2>
+                    <h2 class="slideUp">
+                      <strong>업계 유일 동전매출 집계</strong> 빨래방 간편하게
+                      관리하세요!
+                    </h2>
                     <p class="slideUp">
-                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b><b>페이오티 무인세탁매장 관리시스템</b>
+                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b
+                      ><b>페이오티 무인세탁매장 관리시스템</b>
                     </p>
                   </div>
                 </div>
                 <div class="image_box">
-                  <img src="/img/main-visual03.png">
+                  <img src="/img/main-visual03.png" />
                 </div>
               </div>
             </v-carousel-item>
             <v-carousel-item>
               <div class="carousel-item">
-                 <div class="visual-title">
+                <div class="visual-title">
                   <div class="text">
                     <span class="slideUp">PAYOT SMART SYSTEM</span>
-                    <h2 class="slideUp">일반 무인세탁매장을 <strong>스마트 무인매장으로</strong></h2>
+                    <h2 class="slideUp">
+                      일반 무인세탁매장을 <strong>스마트 무인매장으로</strong>
+                    </h2>
                     <p class="slideUp">
-                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b><b>페이오티 무인세탁매장 관리시스템</b>
+                      <b>PC/Mobile 로 쉽고 간편하게 세탁 매장관리를 도와주는</b
+                      ><b>페이오티 무인세탁매장 관리시스템</b>
                     </p>
                   </div>
                 </div>
                 <div class="image_box">
-                  <img src="/img/main-visual02.png">
+                  <img src="/img/main-visual02.png" />
                 </div>
               </div>
             </v-carousel-item>
@@ -117,8 +124,8 @@
       <div class="inner">
         <v-row>
           <v-col cols="12" md="6" sm="6" lg="3">
-            <div class="section-title" >
-              <h2 class="slideUp">부담은 줄이고<br><b>혜택은 늘리고</b></h2>
+            <div class="section-title">
+              <h2 class="slideUp">부담은 줄이고<br /><b>혜택은 늘리고</b></h2>
               <p class="slideUp">
                 페이오티는 현장에서 점주님과 소통을 통해 문제점을 개선하고
                 사용편의성을 높이는 업데이트를 무상으로 제공하고 있으며, 더욱
@@ -126,23 +133,24 @@
               </p>
             </div>
           </v-col>
-          <v-col cols="12" md="6" sm="6" lg="3" >
+          <v-col cols="12" md="6" sm="6" lg="3">
             <div class="item">
               <div class="img">
-                <img src="img/service-01.jpg">
+                <img src="img/service-01.jpg" />
               </div>
               <dl>
                 <dt>무료배송 및 설치</dt>
                 <dd>
-                  페이오티 직원이 직접 매장을 방문하여 꼼꼼하게 설치를 진행해드립니다
+                  페이오티 직원이 직접 매장을 방문하여 꼼꼼하게 설치를
+                  진행해드립니다
                 </dd>
               </dl>
             </div>
           </v-col>
-          <v-col cols="12" md="6" sm="6" lg="3" >
+          <v-col cols="12" md="6" sm="6" lg="3">
             <div class="item">
               <div class="img">
-                <img src="img/service-02.jpg">
+                <img src="img/service-02.jpg" />
               </div>
               <dl>
                 <dt>무상 업데이트</dt>
@@ -152,10 +160,10 @@
               </dl>
             </div>
           </v-col>
-          <v-col cols="12" md="6" sm="6"  lg="3">
+          <v-col cols="12" md="6" sm="6" lg="3">
             <div class="item">
               <div class="img">
-                <img src="img/service-03.jpg">
+                <img src="img/service-03.jpg" />
               </div>
               <dl>
                 <dt>A/S 1년 무상</dt>
@@ -184,51 +192,60 @@
               cycle
               interval="5000"
             >
-              <v-carousel-item 
-                v-for="item in middleVisualData" 
-                :key="item"
-              >
+              <v-carousel-item v-for="item in middleVisualData" :key="item">
                 <div class="visual-item">
                   <img :src="item.url" />
                 </div>
               </v-carousel-item>
             </v-carousel>
           </v-col>
-          <v-spacer/>
+          <v-spacer />
           <v-col cols="12" md="4">
             <div class="section-title">
-              <h2 class="slideUp">무인세탁매장만을 연구해온<br><b>전문가들과 함께하세요!</b></h2>
-              <p class="slideUp">페이오티는 무인세탁매장의 완전 무인화를 위한 연구를 계속해오고 있습니다.
-                어떻게 하면 고객들이 더욱 편리하게 매장을 이용할 수 있을지, 점주님이 
-                신경쓰지 않고 무인매장을 운영할 수 있을지 늘 고민하고 연구하고 있습니다
+              <h2 class="slideUp">
+                무인세탁매장만을 연구해온<br /><b>전문가들과 함께하세요!</b>
+              </h2>
+              <p class="slideUp">
+                페이오티는 무인세탁매장의 완전 무인화를 위한 연구를 계속해오고
+                있습니다. 어떻게 하면 고객들이 더욱 편리하게 매장을 이용할 수
+                있을지, 점주님이 신경쓰지 않고 무인매장을 운영할 수 있을지 늘
+                고민하고 연구하고 있습니다
               </p>
               <div class="pager">
-                <v-btn text @click="middleVisual-=1">
+                <v-btn text @click="middleVisual -= 1">
                   <v-icon>mdi-arrow-left</v-icon>
                 </v-btn>
-                <v-btn text @click="middleVisual+=1">
+                <v-btn text @click="middleVisual += 1">
                   <v-icon>mdi-arrow-right</v-icon>
                 </v-btn>
               </div>
             </div>
           </v-col>
-          <v-spacer/>
+          <v-spacer />
         </v-row>
       </div>
     </div>
-
 
     <div class="section-04 section">
       <div class="inner">
         <div class="section-title">
           <h2>다양한 무인세탁매장이<b> 페이오티와 함께하고 있습니다</b></h2>
-          <p>무인세탁서비스 매장을 준비하시는 모든 예비창업자분들도 지금 참여해보세요</p>
+          <p>
+            무인세탁서비스 매장을 준비하시는 모든 예비창업자분들도 지금
+            참여해보세요
+          </p>
         </div>
         <div class="partner-logo">
           <v-row>
-            <v-col cols="4" md="2" v-for="item in 18" :key="item" class="logoUp">
-              <span >
-                <img :src="`/img/partner${item}.png`">
+            <v-col
+              cols="4"
+              md="2"
+              v-for="item in 18"
+              :key="item"
+              class="logoUp"
+            >
+              <span>
+                <img :src="`/img/partner${item}.png`" />
               </span>
             </v-col>
           </v-row>
@@ -241,10 +258,10 @@
         <v-row>
           <v-col cols="12" md="3">
             <div class="section-title">
-              <h2>페이오티의<br><b>새로운 소식을</b><br>만나보세요!</h2>
+              <h2>페이오티의<br /><b>새로운 소식을</b><br />만나보세요!</h2>
             </div>
           </v-col>
-          <v-spacer/>
+          <v-spacer />
           <v-col cols="12" md="4">
             <div class="list news">
               <div class="list-title">
@@ -252,13 +269,18 @@
               </div>
               <ul>
                 <li>
-                  <a href="http://www.nbntv.co.kr/news/articleView.html?idxno=901512" target="_new">
+                  <a
+                    href="http://www.nbntv.co.kr/news/articleView.html?idxno=901512"
+                    target="_new"
+                  >
                     <div class="image">
-                      <img src="/img/news01.jpg">
+                      <img src="/img/news01.jpg" />
                     </div>
                     <div class="cont">
-                      <div class="cont-title">언택트(비대면) 시대, 대학 기숙사 공동 세탁실도 페이오티 관리시스템으로 스마트한 
-  관리 가능해져</div>
+                      <div class="cont-title">
+                        언택트(비대면) 시대, 대학 기숙사 공동 세탁실도 페이오티
+                        관리시스템으로 스마트한 관리 가능해져
+                      </div>
                       <div class="cont-info">
                         <span class="name">내외경제TV</span>
                         <span class="date">2020.08.21</span>
@@ -268,12 +290,18 @@
                 </li>
 
                 <li>
-                  <a href="http://www.e2news.com/news/articleView.html?idxno=224453" target="_new">
+                  <a
+                    href="http://www.e2news.com/news/articleView.html?idxno=224453"
+                    target="_new"
+                  >
                     <div class="image">
-                      <img src="/img/news02.jpg">
+                      <img src="/img/news02.jpg" />
                     </div>
                     <div class="cont">
-                      <div class="cont-title">빨래방 카드결제·관리 시스템 개발 전문기업 페이오티, 셀프빨래방·세차장에서 사용가능한 시스템 제작</div>
+                      <div class="cont-title">
+                        빨래방 카드결제·관리 시스템 개발 전문기업 페이오티,
+                        셀프빨래방·세차장에서 사용가능한 시스템 제작
+                      </div>
                       <div class="cont-info">
                         <span class="name">이투뉴스</span>
                         <span class="date">2020.07.21</span>
@@ -283,12 +311,18 @@
                 </li>
 
                 <li>
-                  <a href="https://www.yna.co.kr/view/AKR20190706033000051?input=1179m" target="_new">
+                  <a
+                    href="https://www.yna.co.kr/view/AKR20190706033000051?input=1179m"
+                    target="_new"
+                  >
                     <div class="image">
-                      <img src="/img/news03.jpg">
+                      <img src="/img/news03.jpg" />
                     </div>
                     <div class="cont">
-                      <div class="cont-title">[U∼스타트업] 완전 무인매장 구현…해양대 연구소기업 페이오티</div>
+                      <div class="cont-title">
+                        [U∼스타트업] 완전 무인매장 구현…해양대 연구소기업
+                        페이오티
+                      </div>
                       <div class="cont-info">
                         <span class="name">연합뉴스</span>
                         <span class="date">2019.07.13</span>
@@ -312,11 +346,12 @@
                       <img :src="post.thumbnail" />
                     </div>
                     <div class="cont">
-                      <div class="cont-title" v-html="post.title">
-                      </div>
+                      <div class="cont-title" v-html="post.title"></div>
                       <div class="cont-info">
-                        <span class="name">{{post.blogname}}</span>
-                        <span class="date">{{post.datetime.substring(0,10)}}</span>
+                        <span class="name">{{ post.blogname }}</span>
+                        <span class="date">{{
+                          post.datetime.substring(0, 10)
+                        }}</span>
                       </div>
                       <!-- <div class="text" v-html="post.contents.substring(0,60)" /> -->
                     </div>
@@ -334,9 +369,7 @@
         <v-row>
           <v-col cols="12" md="5" lg="3" sm="12">
             <div class="customer">
-              <h4>
-                무엇이든 물어보세요<br/>친절하게 답변 해 드리겠습니다
-              </h4>
+              <h4>무엇이든 물어보세요<br />친절하게 답변 해 드리겠습니다</h4>
               <dl>
                 <dt>제품 문의하기</dt>
                 <dd>070-7807-6857</dd>
@@ -347,22 +380,22 @@
               </v-btn>
             </div>
           </v-col>
-          <v-spacer/>
+          <v-spacer />
           <v-col cols="12" md="6" lg="5" sm="12">
             <div class="files">
               <dl>
                 <dt>
-                  <img src="/img/catalog.png" alt="카탈로그">
+                  <img src="/img/catalog.png" alt="카탈로그" />
                 </dt>
                 <dd>
                   <label>회사소개 브로슈어</label>
                   <v-btn text @click="downloadFile('catalog')">다운로드</v-btn>
                 </dd>
               </dl>
-              <div class="divider"/>
+              <div class="divider" />
               <dl>
                 <dt>
-                  <img src="/img/guide.png" alt="카탈로그">
+                  <img src="/img/guide.png" alt="카탈로그" />
                 </dt>
                 <dd>
                   <label>키오스크 가이드북</label>
@@ -374,39 +407,36 @@
         </v-row>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import { Hooper, Slide } from "hooper";
 import { daumSearch } from "@/utils/KakaoSearch";
-import gsap from 'gsap';
-import scrollTrigger from 'gsap/ScrollTrigger'
-import PayotForte from '@/components/home/forte';
-
+import gsap from "gsap";
+import scrollTrigger from "gsap/ScrollTrigger";
+import PayotForte from "@/components/home/forte";
 
 export default {
   components: {
     Hooper,
     Slide,
     PayotForte,
-
   },
   data() {
     return {
-      carousel:0,
-      carouselData:[
-        {url:'/img/main-visual01.png'},
-        {url:'/img/main-visual03.png'},
+      carousel: 0,
+      carouselData: [
+        { url: "/img/main-visual01.png" },
+        { url: "/img/main-visual03.png" },
       ],
 
-      middleVisual:0,
-      middleVisualData:[
-        {url:'/img/middle-01.jpg'},
-        {url:'/img/middle-02.jpg'},
-        {url:'/img/middle-03.jpg'},
-        {url:'/img/middle-04.jpg'},
+      middleVisual: 0,
+      middleVisualData: [
+        { url: "/img/middle-01.jpg" },
+        { url: "/img/middle-02.jpg" },
+        { url: "/img/middle-03.jpg" },
+        { url: "/img/middle-04.jpg" },
       ],
 
       blogPosts: [],
@@ -485,80 +515,78 @@ export default {
     };
   },
   mounted() {
-    
-    window.addEventListener("resize", this.onScreenSizeChange)
+    window.addEventListener("resize", this.onScreenSizeChange);
 
-    daumSearch('blog').then((data) => {
+    daumSearch("blog").then((data) => {
       this.blogPosts = data.documents;
-      console.log('ddd')
+      console.log("ddd");
     });
 
-    gsap.registerPlugin(scrollTrigger)
+    gsap.registerPlugin(scrollTrigger);
 
-    gsap.from('.section-01 .slideUp',{
-      y:-100,
-      opacity:0,
-      stagger:{
-        amount:0.6,
-      }
-    })
-
-    gsap.from('.section-03 .slideUp',{
-      scrollTrigger:{
-        trigger:'.section-03',
-        start:'top 70%',
+    gsap.from(".section-01 .slideUp", {
+      y: -100,
+      opacity: 0,
+      stagger: {
+        amount: 0.6,
       },
-      y:200,
-      opacity:0,
-      stagger:{
-        amount:0.3,
-      }
-    })
+    });
 
-    gsap.from('.middle-visual .slideUp',{
-      scrollTrigger:{
-        trigger:'.middle-visual',
-        start:'top 60%',
+    gsap.from(".section-03 .slideUp", {
+      scrollTrigger: {
+        trigger: ".section-03",
+        start: "top 70%",
       },
-      y:200,
-      opacity:0,
-      stagger:{
-        amount:0.3,
-      }
-    })
+      y: 200,
+      opacity: 0,
+      stagger: {
+        amount: 0.3,
+      },
+    });
 
-    gsap.from('.section-04 .logoUp',{
-      scrollTrigger:{
-        trigger:'.section-04',
-        start:'top center',
+    gsap.from(".middle-visual .slideUp", {
+      scrollTrigger: {
+        trigger: ".middle-visual",
+        start: "top 60%",
       },
-      y:200,
-      opacity:0,
-      stagger:{
-        amount:1,
-      }
-    })
-  
+      y: 200,
+      opacity: 0,
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    gsap.from(".section-04 .logoUp", {
+      scrollTrigger: {
+        trigger: ".section-04",
+        start: "top center",
+      },
+      y: 200,
+      opacity: 0,
+      stagger: {
+        amount: 1,
+      },
+    });
   },
   methods: {
     onScreenSizeChange() {
       this.screenHeight = window.innerHeight;
     },
-    bottomScroll(){
-      window.scrollTo({top:window.innerHeight, behavior:'smooth'})
+    bottomScroll() {
+      window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
     },
-    
-     downloadFile(fileName) {
+
+    downloadFile(fileName) {
       const filePath = `http://www.payot-inc.com/pdf/${fileName}.pdf`;
-      window.open(filePath, '_blank');
+      window.open(filePath, "_blank");
     },
 
-    kakaoLink(){
-      window.open('http://pf.kakao.com/_uAqmK' , '_new')
+    kakaoLink() {
+      window.open("http://pf.kakao.com/_uAqmK", "_new");
     },
 
-    kiosk(value){
-      this.$router.push({ name: 'Kiosk', query: { tab:value }});
+    kiosk(value) {
+      this.$router.push({ name: "Kiosk", query: { tab: value } });
     },
   },
 };
@@ -567,25 +595,24 @@ export default {
 <style lang="scss" scoped>
 .home {
   height: 100%;
- 
 
-  .spacer{
-    display:flex;
+  .spacer {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:100px;
+    margin-top: 100px;
 
-    .v-divider{
-      display:inline-block;
-      height:150px;
-      width:1px;
+    .v-divider {
+      display: inline-block;
+      height: 150px;
+      width: 1px;
       background: #e2e2e2;
     }
   }
-  
+
   .top-bg {
     position: absolute;
-    overflow:hidden;
+    overflow: hidden;
     width: 100%;
     height: 100%;
     top: 0;
@@ -600,7 +627,7 @@ export default {
   z-index: 10;
 
   .inner {
-    margin:0 150px;
+    margin: 0 150px;
   }
 }
 
@@ -608,120 +635,116 @@ export default {
   position: relative;
   z-index: 10;
   width: 100%;
-  padding:0 50px;
+  padding: 0 50px;
 
   .inner {
     position: relative;
-    width:100%;
+    width: 100%;
     max-width: 100%;
   }
 
+  .main-visual {
+    display: Flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 30px;
+    background: #f2f2f2;
 
+    min-height: 680px;
 
-    .main-visual{
-      display:Flex;
+    .carousel-item {
+      display: flex;
       align-items: center;
-      width:100%;
-      overflow:hidden;
-      border-radius:30px;
-      background:#f2f2f2;
+      justify-content: space-between;
+      height: 100%;
 
-      min-height:680px;
+      .visual-title {
+        padding: 80px 150px;
 
-      .carousel-item{
-        display:flex;
-        align-items: center;
-        justify-content: space-between;
-        height:100%;
-        
-        .visual-title {
-          padding:80px 150px;
+        .text {
+          width: auto;
 
-          .text {
-            width: auto;
-
-            span {
-              font-size: 1.5rem;
-              letter-spacing: 10px;
-              color: #888;
-              margin-left: 10px;
-            }
-            h2 {
-              font-size: 4rem;
-              line-height: 4.8rem;
+          span {
+            font-size: 1.5rem;
+            letter-spacing: 10px;
+            color: #888;
+            margin-left: 10px;
+          }
+          h2 {
+            font-size: 4rem;
+            line-height: 4.8rem;
+            font-weight: 200;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            strong {
+              display: block;
               font-weight: 200;
-              margin-top: 25px;
-              margin-bottom: 30px;
-              strong {
-                display:block;
-                font-weight: 200;
-                color: #EF1682;
-              }
-            }
-            p {
-              font-size: 1.4rem;
-              line-height: 2.4rem;
-
-              b{
-                display:block;
-                font-weight:300;
-              }
+              color: #ef1682;
             }
           }
-        } 
+          p {
+            font-size: 1.4rem;
+            line-height: 2.4rem;
 
-        .image_box{
-          align-self: flex-end;
-          img{
-            display:block;
-            max-width:680px;
+            b {
+              display: block;
+              font-weight: 300;
+            }
           }
         }
+      }
 
-        
+      .image_box {
+        align-self: flex-end;
+        img {
+          display: block;
+          max-width: 680px;
+        }
       }
     }
   }
+}
 
+.middle-visual.section {
+  padding: 0px;
+  padding-bottom: 120px;
 
-.middle-visual.section{
-  padding:0px;
-  padding-bottom:120px;
-
-  .section-title:before{
-    content:'';
-    display:inline-block;
-    width:40px;
-    height:6px;
-    border-radius:3px;
-    background:#e2e2e2;
-    margin-bottom:30px;
+  .section-title:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e2e2;
+    margin-bottom: 30px;
   }
 
-  .pager{
-    margin-top:50px;
-    bottom:30px;
+  .pager {
+    margin-top: 50px;
+    bottom: 30px;
 
-
-    .v-btn{
-      border:1px solid #c2c2c2;
-      height:50px;
-      border-radius:0px;
+    .v-btn {
+      border: 1px solid #c2c2c2;
+      height: 50px;
+      border-radius: 0px;
     }
-    .v-btn:last-child{
-      border-left:0px;
+    .v-btn:last-child {
+      border-left: 0px;
     }
   }
-  
-  .visual-item{
-    display:flex;
+
+  .visual-item {
+    display: flex;
     align-items: center;
     justify-content: center;
-    max-height:450px;
-    border-radius:15px; 
-    overflow:hidden;
+    max-height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
 
-    img{width:100%;}
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -731,32 +754,32 @@ export default {
     text-align: center;
   }
 
-  .more{
-    margin-top:80px;
-    text-align:center;
-    
-    .v-btn{
-      width:100%;
-      max-width:900px;
-      background:#e2e2e2;
-      height:60px;
-      border-radius:30px;
-      label{
-        font-size:1.4rem;
-        color:#494949;
+  .more {
+    margin-top: 80px;
+    text-align: center;
+
+    .v-btn {
+      width: 100%;
+      max-width: 900px;
+      background: #e2e2e2;
+      height: 60px;
+      border-radius: 30px;
+      label {
+        font-size: 1.4rem;
+        color: #494949;
       }
-      .v-icon{
-        margin-left:20px;
-        color:#b2b2b2;
+      .v-icon {
+        margin-left: 20px;
+        color: #b2b2b2;
       }
     }
-    .v-btn:hover{
-      background:#EF1682;
-      label{
-        color:#fff;
+    .v-btn:hover {
+      background: #ef1682;
+      label {
+        color: #fff;
       }
-      .v-icon{
-        color:#fff;
+      .v-icon {
+        color: #fff;
       }
     }
   }
@@ -813,7 +836,7 @@ export default {
         justify-content: center;
         img {
           width: 100%;
-          height:100%;
+          height: 100%;
           display: block;
         }
       }
@@ -856,10 +879,8 @@ export default {
   }
 }
 
-
-
 .section-03 {
-  padding:100px 0;
+  padding: 100px 0;
 
   .section-title {
     padding-right: 50px;
@@ -869,14 +890,14 @@ export default {
     }
   }
 
-  .section-title:before{
-    content:'';
-    display:inline-block;
-    width:40px;
-    height:6px;
-    border-radius:3px;
-    background:#e2e2e2;
-    margin-bottom:30px;
+  .section-title:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e2e2;
+    margin-bottom: 30px;
   }
 
   .item {
@@ -885,11 +906,11 @@ export default {
     .img {
       background: #e2e2e2;
       border-radius: 10px;
-      overflow:hidden;
+      overflow: hidden;
 
-      img{
-        width:100%;
-        display:block;
+      img {
+        width: 100%;
+        display: block;
       }
     }
 
@@ -898,273 +919,269 @@ export default {
 
       dt {
         font-size: 1.8rem;
-        color: #494949
+        color: #494949;
       }
       dd {
         font-size: 1.2rem;
-        line-height:1.8rem;
+        line-height: 1.8rem;
         margin-top: 10px;
-        color: #888
+        color: #888;
       }
     }
 
-    dl:before{
-      display:block;
-      content:'';
-      width:20px;
-      height:2px;
-      background:#e2e2e2;
-      margin:25px 0;
+    dl:before {
+      display: block;
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: #e2e2e2;
+      margin: 25px 0;
     }
   }
 }
 
-.section-04{
-  display:flex;
+.section-04 {
+  display: flex;
   justify-content: center;
-  background:#f8f8f8;
-  
-  .inner{
-    max-width:1280px;
+  background: #f8f8f8;
+
+  .inner {
+    max-width: 1280px;
   }
 
-  .section-title{
-    margin-bottom:50px;
-    text-align:center;
+  .section-title {
+    margin-bottom: 50px;
+    text-align: center;
   }
 
-  .partner-logo{
-    display:flex;
+  .partner-logo {
+    display: flex;
     flex-wrap: wrap;
 
-    span{
-      img{
-        display:block;
-        width:100%;
+    span {
+      img {
+        display: block;
+        width: 100%;
       }
     }
   }
 }
 
-
-.section-05{
-  
-  .section-title{
-    margin-bottom:30px;
+.section-05 {
+  .section-title {
+    margin-bottom: 30px;
   }
 
-  .section-title:before{
-    content:'';
-    display:inline-block;
-    width:40px;
-    height:6px;
-    border-radius:3px;
-    background:#e2e2e2;
-    margin-bottom:30px;
+  .section-title:before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e2e2;
+    margin-bottom: 30px;
   }
 
-  .list{
-    background:#fff;
-    border-radius:0px;
-    border-top:1px solid #494949;
-    border-bottom:1px solid #e2e2e2;
-    padding:30px 15px;
-    height:100%;
+  .list {
+    background: #fff;
+    border-radius: 0px;
+    border-top: 1px solid #494949;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 30px 15px;
+    height: 100%;
 
-    .list-title{
-      margin-bottom:30px;
-      font-size:1.3rem
+    .list-title {
+      margin-bottom: 30px;
+      font-size: 1.3rem;
     }
 
-    ul{
-      li{
-        border-bottom:1px solid #e2e2e2;
-        margin-bottom:30px;
-        padding-bottom:30px;
+    ul {
+      li {
+        border-bottom: 1px solid #e2e2e2;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
 
-        a{
-          display:flex;
+        a {
+          display: flex;
           align-items: flex-start;
-          text-decoration:none;
-          color:#595959;
+          text-decoration: none;
+          color: #595959;
         }
 
-        a:hover{
-          .cont-title{
-            text-decoration:underline;
+        a:hover {
+          .cont-title {
+            text-decoration: underline;
           }
         }
-        
-        .image{
-          display:Flex;
+
+        .image {
+          display: Flex;
           justify-content: center;
           align-items: center;
-          width:110px;
-          height:110px;
-          border:1px solid #e2e2e2;
-          margin-right:30px;
-          border-radius:5px;
-          overflow:hidden;
+          width: 110px;
+          height: 110px;
+          border: 1px solid #e2e2e2;
+          margin-right: 30px;
+          border-radius: 5px;
+          overflow: hidden;
 
-          img{
-            height:120%;
-            display:block;
+          img {
+            height: 120%;
+            display: block;
           }
         }
-        .cont{
-          fleX:1;
-          .cont-title{
-            display:-webkit-box;
-            width:100%;
-            font-size:1.3rem;
-            overflow:hidden;
+        .cont {
+          flex: 1;
+          .cont-title {
+            display: -webkit-box;
+            width: 100%;
+            font-size: 1.3rem;
+            overflow: hidden;
             text-overflow: ellipsis;
-            white-space:normal;
+            white-space: normal;
             -webkit-line-clamp: 2;
-            -webkit-box-orient:vertical
+            -webkit-box-orient: vertical;
           }
-          .cont-info{
-            display:flex;
+          .cont-info {
+            display: flex;
             align-items: center;
-            margin-top:10px;
-            span{color:#888;margin-right:15px;}
+            margin-top: 10px;
+            span {
+              color: #888;
+              margin-right: 15px;
+            }
           }
         }
       }
 
-      li:last-child{
-        margin-bottom:0;
-        border-bottom:0;
+      li:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
       }
     }
   }
 }
 
-.section-06{
+.section-06 {
+  background: #f8f8f8;
+  padding: 90px 0;
 
-  background:#f8f8f8;
-  padding:90px 0;
-
-  .customer{
-    height:100%;
-    display:flex;
+  .customer {
+    height: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-  h4{
-      font-size:2rem;
+    h4 {
+      font-size: 2rem;
     }
-    dl{
-      padding-top:40px;
-      dt{
-        font-size:1.2rem;
-        margin-bottom:5px;
-        color:#888;
+    dl {
+      padding-top: 40px;
+      dt {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        color: #888;
       }
-      dd{
-        font-size:2.4rem;
-        font-weight:500;
+      dd {
+        font-size: 2.4rem;
+        font-weight: 500;
       }
     }
 
-    .v-btn{
-      height:40px;
-      margin-top:30px;
-      background:#FFCC00;
+    .v-btn {
+      height: 40px;
+      margin-top: 30px;
+      background: #ffcc00;
 
-      .v-icon{
-        font-size:18px;
-        margin-right:10px;
+      .v-icon {
+        font-size: 18px;
+        margin-right: 10px;
       }
     }
   }
 
-  .files{
-    display:flex;
+  .files {
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:100%;
+    height: 100%;
 
-
-    .divider{
+    .divider {
       width: 1px;
-      height:100%;
-      background:#e2e2e2;
-      margin:0 20px;
+      height: 100%;
+      background: #e2e2e2;
+      margin: 0 20px;
     }
-    
-    dl{
-      padding:0 30px;
-      dt{
-        display:flex;
+
+    dl {
+      padding: 0 30px;
+      dt {
+        display: flex;
         justify-content: center;
 
-        img{
-          width:100%;
-          max-width:180px;
-          display:block;
+        img {
+          width: 100%;
+          max-width: 180px;
+          display: block;
         }
       }
-      dd{
-        text-align:center;
-        margin-top:30px;
-        label{
-          display:block;
-          font-size:1.2rem
+      dd {
+        text-align: center;
+        margin-top: 30px;
+        label {
+          display: block;
+          font-size: 1.2rem;
         }
-        .v-btn{
-          border:2px solid #0286cb;
-          height:30px;
-          color:#0286cb;
-          margin-top:10px;
+        .v-btn {
+          border: 2px solid #0286cb;
+          height: 30px;
+          color: #0286cb;
+          margin-top: 10px;
         }
       }
     }
-
   }
-
 }
 
-@media screen and (max-width:1440px){
-  .home{
-    .top-bg{
-      .wave1{
-        width:700px;
-        height:700px;
-        left:-400px;
-        top:-150px;
-        border-radius:300px;
+@media screen and (max-width: 1440px) {
+  .home {
+    .top-bg {
+      .wave1 {
+        width: 700px;
+        height: 700px;
+        left: -400px;
+        top: -150px;
+        border-radius: 300px;
       }
-      .wave2{
-        width:500px;
-        height:500px;
-        top:400px;
-        right:-350px;
-        border-radius:200px;
+      .wave2 {
+        width: 500px;
+        height: 500px;
+        top: 400px;
+        right: -350px;
+        border-radius: 200px;
       }
     }
   }
 
-  .section{
-    left:0;
-    transform:none;
-    
-    .inner{
-      margin:0 20px;
-    }    
+  .section {
+    left: 0;
+    transform: none;
+
+    .inner {
+      margin: 0 20px;
+    }
   }
 
-  .section-01{
-    .main-visual{
-
-      .carousel-item{
-        flex-direction:column;
+  .section-01 {
+    .main-visual {
+      .carousel-item {
+        flex-direction: column;
         align-items: unset;
         justify-content: unset;
 
-        .image_box{
-          img{
-            max-width:100%;
+        .image_box {
+          img {
+            max-width: 100%;
           }
         }
       }
@@ -1172,41 +1189,41 @@ export default {
   }
 }
 
-@media screen and (max-width:960px){
-.home{
-  .section-01{
-      .main-visual{
-        .carousel-item{
-          flex-direction:column;
+@media screen and (max-width: 960px) {
+  .home {
+    .section-01 {
+      .main-visual {
+        .carousel-item {
+          flex-direction: column;
 
           .visual-title {
-            padding:60px 30px;
+            padding: 60px 30px;
             .text {
               width: auto;
               span {
-                font-size:14px;
-                letter-spacing:5px;
-                font-weight:400;
+                font-size: 14px;
+                letter-spacing: 5px;
+                font-weight: 400;
                 margin-left: 0px;
               }
               p {
                 font-size: 18px;
                 line-height: 26px;
-                font-weight:normal;
+                font-weight: normal;
 
-                b{
-                  display:inline;
-                  font-weight:normal;
+                b {
+                  display: inline;
+                  font-weight: normal;
                 }
               }
             }
-          } 
+          }
 
-          .image_box{
+          .image_box {
             align-self: flex-end;
-            img{
-              display:block;
-              max-width:100%;
+            img {
+              display: block;
+              max-width: 100%;
             }
           }
         }
@@ -1214,74 +1231,72 @@ export default {
     }
   }
 }
-@media screen and (max-width:720px){
-  .home{
+@media screen and (max-width: 720px) {
+  .home {
     .top-bg {
       .wave2 {
-        top:300px;
+        top: 300px;
       }
     }
   }
 
-  .section-03{
-    .section-title{
-      margin-bottom:50px;
-      padding:0;
-      text-align:center;
+  .section-03 {
+    .section-title {
+      margin-bottom: 50px;
+      padding: 0;
+      text-align: center;
     }
   }
 
-  .section-05{
-    .list.news{
-      margin-right:0px;
+  .section-05 {
+    .list.news {
+      margin-right: 0px;
     }
-    .list.blog{
-      margin-left:0px;
+    .list.blog {
+      margin-left: 0px;
     }
   }
 
-  .section-06{
-    .section-title{
-      text-align:center;
+  .section-06 {
+    .section-title {
+      text-align: center;
     }
-    
-    .files{
-      margin-top:30px;
-      border-top:1px solid #e2e2e2;
-      .divider{
-        margin:0 15px;
+
+    .files {
+      margin-top: 30px;
+      border-top: 1px solid #e2e2e2;
+      .divider {
+        margin: 0 15px;
       }
-      dl{
-        padding:15px;
+      dl {
+        padding: 15px;
       }
     }
   }
 }
 
-@media screen and (max-width:480px){
-  .hooperWrap{
-    .hooper{
-      max-height:500px;
+@media screen and (max-width: 480px) {
+  .hooperWrap {
+    .hooper {
+      max-height: 500px;
     }
   }
 
-  .section-05{
-    .list{
-      padding:30px 0px;
-      ul{
-        li{
-          margin-bottom:20px;
-          padding-bottom:20px;
-          .image{
-            width:80px;
-            height:80px;
-            margin-right:20px;
+  .section-05 {
+    .list {
+      padding: 30px 0px;
+      ul {
+        li {
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          .image {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
           }
         }
       }
     }
   }
-
 }
-
 </style>

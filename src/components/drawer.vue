@@ -20,6 +20,9 @@
         <li v-ripple @click="kiosk('default')">
           <a>키오스크</a>
         </li>
+        <li v-ripple @click="$router.push('kiosk-mini')">
+          <a>키오스크 미니</a>
+        </li>
         <li v-ripple @click="$router.push('kiosk-detail')">
           <a>구매안내</a>
         </li>

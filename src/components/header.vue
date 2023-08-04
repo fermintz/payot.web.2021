@@ -16,6 +16,9 @@
         <li @click="kiosk('default')">
           <a>키오스크</a>
         </li>
+        <li @click="$router.push('kiosk-mini')">
+          <a>키오스크 미니</a>
+        </li>
         <li class="buy" @click="$router.push('kiosk-detail')">
           <a>구매안내</a>
         </li>
@@ -123,11 +126,11 @@ export default {
   .main_menu{
     display: flex;
     align-items: center;
+    gap:40px;
 
     li {
       position: relative;
-      margin-right:70px;
-      
+     
       a{
         font-size: 18px;
         color:#595959;

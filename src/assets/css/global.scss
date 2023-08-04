@@ -127,4 +127,22 @@ box-shadow: 0px 0px 0px rgba(0,0,0,0);
   }
 }
 
+.v-dialog{
+  background:#fff;
+  overflow: hidden;
+}
 
+.v-dialog::-webkit-scrollbar{
+  width:10px;
+}
+
+.v-dialog::-webkit-scrollbar-thumb{
+  background:#0088ff;
+  background-clip: padding-box;
+  border-radius: 5px;
+  border:2px solid transparent
+}
+
+.v-dialog::-webkit-scrollbar-track{
+  background:#fff;
+}

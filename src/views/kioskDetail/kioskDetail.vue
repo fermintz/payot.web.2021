@@ -76,7 +76,13 @@
                   <p>부가세가 포함된 가격입니다.</p>
                 </dd>
               </dl>
+
+              <div class="btns">
+                <v-btn outlined @click="orderLink">구매하러 바로가기</v-btn>
+              </div>
             </div>
+
+            
           </v-col>
         </v-row>
       </div> <!-- top -->
@@ -389,7 +395,7 @@
               <div class="text">
                 <strong>일반형 설치시</strong>
                 <span>일반형의 경우 매립되는 방식으로 설치됩니다. 설치 전 키오스크 크기에 맞게 벽면 타공작업이 필요합니다</span>
-                <span>가로 480 x 세로 1030 벽면 목공작업(앞문, 뒷문 개폐형)</span>
+                <span>가로 482 x 세로 1032 벽면 목공작업(앞문, 뒷문 개폐형)</span>
                 <span>전원 220v 1개 / LAN케이블 1개 필요</span>
               </div>
             </v-col>
@@ -406,36 +412,47 @@
           <h4>※ 일반형 매립시 주의사항</h4>
 
           <div class="cont">
-            <v-row>
-              <v-col cols="12" md="8" sm="12">
-                <dl class="box box01">
-                  <dt>정면부가 돌출되는 키오스크 입니다. 작업시 주의 부탁드립니다.</dt>
-                  <dd>
-                    <img src="/img/kiosk-detail/guide-detail01.png" >
-                  </dd>
-                </dl>
-              </v-col>
-              <v-col cols="12" md="4" sm="12">
-                <div class="custom_row">
-                  <dl class="box box02">
-                    <dt>뒷면 (높이 1030mm x 넓이 480mm)
-매립을 위한 벽면 타공이 필요합니다.</dt>
-                    <dd>
-                      <img src="/img/kiosk-detail/guide-detail02.png" >
-                    </dd>
-                  </dl>
-              
-                  <dl class="box box03">
-                    <dt>매립시 정면부는 돌출됩니다. 주의해주세요</dt>
-                    <dd>
-                      <img src="/img/kiosk-detail/guide-detail03.png" >
-                    </dd>
-                  </dl>
-               
-                </div>
-              </v-col>
-            </v-row>
+            <img src="/img/kiosk-detail/kiosk_guide01.png" >
           </div>
+
+          <v-row>
+            <v-col cols="12" md="4">
+              <dl>
+                <dt>
+                  <strong>1</strong>
+                  <span>벽면 타공사이즈  H1032 * L482 mm<br>정면 필요공간 H1088 * L532</span>
+                  <p>사방 여유공간 70mm정도 필요</p>
+                </dt>
+                <dd>
+                  <img src="/img/kiosk-detail/kiosk_guide02.png">
+                </dd>
+              </dl>
+            </v-col>
+            <v-col cols="12" md="4">
+              <dl>
+                <dt>
+                  <strong>2</strong>
+                  <span>뒷면 케이스 안쪽에 피스를 박아 벽면에 고정합니다.</span>
+                  <p>흰색면-노출부위 / 회색면-매립부위</p>
+                </dt>
+                <dd>
+                  <img src="/img/kiosk-detail/kiosk_guide03.png">
+                </dd>
+              </dl>
+            </v-col>
+            <v-col cols="12" md="4">
+              <dl>
+                <dt>
+                  <strong>3</strong>
+                  <span>뒷면 케이스 안쪽에 피스를 박아 벽면에 고정합니다.</span>
+                  <p>흰색면-노출부위 / 회색면-매립부위</p>
+                </dt>
+                <dd>
+                  <img src="/img/kiosk-detail/kiosk_guide04.png">
+                </dd>
+              </dl>
+            </v-col>
+          </v-row>
         </div>
       </div>
     </div>
@@ -457,6 +474,10 @@ export default {
   methods:{
     kakaoLink(){
       window.open('https://pf.kakao.com/_uAqmK/chat','_new')
+    },
+
+    orderLink(){
+      window.open('https://smartstore.naver.com/payot2/products/4991725565','_new')
     }
   },
 

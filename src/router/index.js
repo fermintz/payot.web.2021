@@ -36,6 +36,11 @@ const routes = [
     component: Detail,
   },
   {
+    path: "/kiosk-mini",
+    name: "kiosk-mini",
+    component: ()=> import('@/views/kiosk-mini/kiosk-mini.vue'),
+  },
+  {
     path:"/kiosk-detail",
     name:"kiosk-detail",
     component:()=> import('@/views/kioskDetail/kioskDetail.vue')
@@ -61,6 +66,11 @@ const routes = [
     component:()=> import('@/views/member/member.vue')
   },
   {
+    path:"/event/01",
+    name:'event',
+    component:()=> import('@/views/event/01/index.vue')
+  },
+  {
     path:'/terms/:type',
     name:'terms',
     component:()=> import('@/views/Terms.vue')
@@ -74,6 +84,7 @@ const routes = [
     path:"/*",
     redirect: '/404',
   },
+  
 
 ];
 
