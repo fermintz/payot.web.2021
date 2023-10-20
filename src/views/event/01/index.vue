@@ -36,10 +36,10 @@
               <strong>
                 다양한 카카오톡 알림서비스
               </strong>
-              <span>세탁물 방치를 위한 알림, 결제영수증 등 카카오톡으로 서비스 알림을 발송합니다.</span>
+              <span>장비세탁종료, 포인트변동사항, 결제 및 충전내역 등 카카오톡으로 알림을 발송합니다.</span>
             </div>
           </v-col>
-          <v-col cols="12" lg="6" md="6">
+          <v-col cols="12" lg="6" md="6"> 
             <div class="item">
               <img src="@/assets/img/event/01/sec2-04.png">
               <strong>
@@ -82,6 +82,7 @@
         </div>
       </div>
     </section>
+
     <section class="sec-3">
       <div class="inner">
         <div class="tit">
@@ -149,6 +150,66 @@
       </div>
     </section>
 
+    <section class="spec">
+      <div class="inner">
+        <div class="tit">
+          <h2>키오스크 제원</h2>
+        </div>
+        <v-row>
+          <v-col cols="12" md="6">
+            <dl>
+              <dt>
+                <img src="@/assets/img/event/01/kiosk.png">
+              </dt>
+              <dd>
+                <h4>24타입 키오스크</h4>
+                <p>
+                  <span>전면부 사이즈</span>
+                  <strong>
+                    넓이 415mm x 높이 885mm x 두께 52mm
+                  </strong>
+                </p>
+                <p>
+                  <span>후면부 사이즈</span>
+                  <strong>
+                    넓이 368mm x 높이 845mm x 두께 120mm
+                  </strong>
+                </p>
+                <p>
+                  <span>스펙</span>
+                  <strong>
+                    Intel NUC 4505 / 120GB / 8GB / BLE / WIFI
+                  </strong>
+                </p>
+              </dd>
+            </dl>
+          </v-col>
+          <v-col cols="12" md="6">
+            <dl>
+              <dt>
+                <img src="@/assets/img/event/01/tablet.png">
+              </dt>
+              <dd>
+                <h4>10.1인치 태블릿 키오스크</h4>
+                <p>
+                  <span>사이즈</span>
+                  <strong>
+                    넓이 280mm x 높이 165mm
+                  </strong>
+                </p>
+                <p>
+                  <span>스펙</span>
+                  <strong>
+                    10.1인치 LCD / 안드로이드 11 / 쿼드코어
+                  </strong>
+                </p>
+              </dd>
+            </dl>
+          </v-col>
+        </v-row>
+      </div>
+    </section>
+
     <section class="sec-4">
       <div class="inner">
         <div class="tit">
@@ -196,7 +257,7 @@
         </div>
         <div class="right">
           <img src="@/assets/img/event/01/cs_qrcode.png">
-          <span>카카오톡으로 상담받기</span>
+          <v-btn text href="https://pf.kakao.com/_uAqmK/chat" target="_new">카카오톡으로 상담받기</v-btn>
         </div>
       </div>
     </section>
@@ -212,7 +273,8 @@
   padding-top:100px;
 }
 section{
-  padding:140px 0;
+  padding:140px 30px;
+ 
 }
 .sec-1{
   padding:0;
@@ -407,7 +469,7 @@ section{
 }
 
 .sec-4{
-  background:#fff;
+  background:#f2f2f2;
 
   .tit{
     text-align: center;
@@ -466,13 +528,14 @@ section{
 }
 
 .sec-5{
-  background:#f2f2f2;
+  background:#292929;
   padding:70px 0;
   .inner{
     display:flex;
     justify-content: space-between;
     align-items: center;
     .left{
+      color:#fff;
       h4{
         font-size:24px;
       }
@@ -492,18 +555,64 @@ section{
       img{
         width:100%;
       }
-      span{
+      .v-btn{
         margin-top:20px;
-        font-size:16px;
+        height:42px;
+        padding:0 30px;
+        border-radius:21px;
+        background:#f5e000;
+        font-size:14px;
+        font-weight:600;
+      }
+    }
+  }
+}
+
+.spec{
+  background:#fff;
+  .tit{
+    margin-bottom:30px;
+  }
+  .row{
+    margin:-30px;
+  
+  }
+  .col-12{
+    padding:30px;
+  }
+
+  dl{
+    dt{
+      border:1px solid #e2e2e2;
+      background:#fff;
+      border-radius:20px;
+      img{
+        width:100%;
+      }
+    }
+    dd{
+      h4{
+        font-size:20px;
+        margin-bottom:20px;
+        margin-top:40px;
+      }
+
+      p{
+        display:flex;
+        margin-top:10px;
+        span{
+          width:120px;
+        }
+        strong{
+          flex:1;
+        }
       }
     }
   }
 }
 
 @media screen and(max-width:900px) {
-  .inner{
-    padding:0 20px;
-  }
+
   .sec-1{
     img.mo{
       display:block;
@@ -515,6 +624,13 @@ section{
 
   .sec-3{
     .list{
+      .item:first-child{
+        .img{
+          img{
+            max-height:200px;
+          }
+        }
+      }
       .item{
         height:auto;
         gap:0;
@@ -533,12 +649,14 @@ section{
            margin-top:30px;
           }
           .img{
-            width:auto;
-            
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:unset;
+
             img{
-              width:auto;
               position: relative;
-              max-height:300px;
+              max-width:100%;
               bottom:0;
             }
           }
@@ -547,6 +665,19 @@ section{
     }
   }
 
+  .sec-4{
+ 
+
+    .tit{
+      p{
+        letter-spacing:2px;
+        margin:0;
+        margin-bottom:30px;
+      }
+    }
+  }
+
+  
   .sec-5{
 
   .inner{

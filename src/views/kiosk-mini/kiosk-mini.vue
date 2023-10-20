@@ -209,8 +209,7 @@
                     다양한 카카오톡 알림서비스
                   </strong>
                   <span>
-                    세탁물 방치 방지를 위한 알림, 결제영수증 등 다양한 알림을
-                    카카오톡으로 전달됩니다.
+                    장비세탁종료, 포인트변동사항, 결제 및 충전내역 등 카카오톡으로 알림을 발송합니다.
                   </span>
                 </dd>
               </dl>
@@ -383,10 +382,7 @@
               <span>프로세서</span>
               <strong>쿼드코어 프로세서</strong>
             </div>
-            <div class="spac_item">
-              <span>설치방식</span>
-              <strong>거치형 or 벽면부착형</strong>
-            </div>
+
             <div class="spac_item">
               <span>설치조건</span>
               <strong>설치 위치 근처 220V 전원 콘센트 1개 필요</strong>
@@ -396,9 +392,9 @@
           <div class="product">
             
             <div class="image">
-              <img src="/img/kiosk_mini/kiosk_option.png" />
+              <img src="/img/kiosk_mini/kiosk_mini.png" />
             </div>
-            <span>키오스크 미니 거치형 또는 벽부착형 중 택1</span>
+            <span>키오스크 미니 </span>
           </div>
 
           <v-row>
@@ -433,10 +429,6 @@ export default {
     return {
       thumnail: 0,
       thumnailData: [
-        {
-          url: "/img/kiosk_mini/kiosk2.png",
-          name: "키오스크 미니 스탠드형",
-        },
         {
           url: "/img/kiosk_mini/kiosk_mini.png",
           name: "키오스크 미니 벽부착형",

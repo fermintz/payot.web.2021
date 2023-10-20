@@ -420,18 +420,18 @@
       </div> <!-- section-6 -->
     </div>  <!--contents -->
 
-    <Notice />
+
   </div>
 </template>
 
 
 <script>
 import { daumSearch } from "@/utils/KakaoSearch";
-import Notice from '@/components/modal/notice'
+
 
 export default {
   components:{
-    Notice
+
   },
   data(){
     return{
